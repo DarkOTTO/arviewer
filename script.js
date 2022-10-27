@@ -1,9 +1,9 @@
 window.onload = () => {
-	   const button = document.querySelector('button[data-action="change"]');
-	   button.innerText = '?';
+    const button = document.querySelector('button[data-action="change"]');
+    button.innerText = '?';
 
-     let places = staticLoadPlaces();
-     renderPlaces(places);
+    let places = staticLoadPlaces();
+    renderPlaces(places);
 };
 
 function staticLoadPlaces() {
@@ -13,14 +13,14 @@ function staticLoadPlaces() {
             location: {
                 lat: 37.611956,
                 lng: 127.159823,
-            }
+            },
         },
 //        {
 //            name: 'Magnemite',
 //            location: {
 //                lat: 37.563667,
 //                lng: 126.830436,
-//            }
+//            },
 //        },
     ];
 }
@@ -80,12 +80,12 @@ function renderPlaces(places) {
 
         model.setAttribute('animation-mixer', '');
 
-				document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-						var entityt = document.querySelector('[gps-entity-place]');
-						modelIndex++;
-						var newIndex = modelIndex % models.length;
-						setModel(models[newIndex], entity);
-				});
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            var entity = document.querySelector('[gps-entity-place]');
+            modelIndex++;
+            var newIndex = modelIndex % models.length;
+            setModel(models[newIndex], entity);
+        });
 
         scene.appendChild(model);
     });
