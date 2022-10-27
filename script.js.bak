@@ -11,8 +11,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokemon',
             location: {
-                lat: 37.611956,
-                lng: 127.159823,
+//                lat: 37.611956,
+//                lng: 127.159823,
             }
         },
 //        {
@@ -75,9 +75,9 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
+        
         setModel(models[modelIndex], model);
-
+        
         model.setAttribute('animation-mixer', '');
 
 				document.querySelector('button[data-action="change"]').addEventListener('click', function () {
@@ -86,7 +86,7 @@ function renderPlaces(places) {
 						var newIndex = modelIndex % models.length;
 						setModel(models[newIndex], entity);
 				});
-
+				
         scene.appendChild(model);
     });
 }
