@@ -15,13 +15,13 @@ function staticLoadPlaces() {
                 lng: 127.159823,
             },
         },
-//        {
-//            name: 'Magnemite',
-//            location: {
-//                lat: 37.563667,
-//                lng: 126.830436,
-//            },
-//        },
+        {
+            name: 'Starbucks",
+            location: {
+                lat: 37.563667,
+                lng: 126.830436,
+            },
+        },
     ];
 }
 
@@ -76,17 +76,18 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
+        if (place.name == 'Starbucks') {
+           model.setAttribute('scale', '0.5 0.5 0.5');
+           model.setAttribute('rotation', '0 180 0');
+           model.setAttribute('obj-model', './assets/obj/starbucks.obj');
+    	   const div = document.querySelector('.instructions');
+	   div.innerText = model.info;
+        } else {
+           setModel(models[modelIndex], model);
+        }
 
         model.setAttribute('animation-mixer', '');
 
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
-        });
-
         scene.appendChild(model);
     });
-}
+
