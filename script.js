@@ -18,8 +18,8 @@ function staticLoadPlaces() {
         {
             name: 'Starbucks",
             location: {
-                lat: 37.563667,
-                lng: 126.830436,
+                lat: 37.563667946,
+                lng: 126.83039115,
             },
         },
     ];
