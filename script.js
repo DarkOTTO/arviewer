@@ -75,8 +75,8 @@ function renderPlaces(places) {
 
         if (place.name.localeCompare("Starbucks") == 0) {
            model.setAttribute('scale', '0.5 0.5 0.5');
-           model.setAttribute('rotation', '0 180 0');
-           model.setAttribute('obj-model', './assets/obj/starbucks.obj');
+//           model.setAttribute('rotation', '0 180 0');
+           model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
         } else {
 //           setModel(models[modelIndex], model);
            model.setAttribute('scale', '0.1 0.1 0.1');
