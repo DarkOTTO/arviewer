@@ -15,8 +15,8 @@ function staticLoadPlaces() {
         {
             name: 'Starbucks",
             location: {
-                lat: 37.563866372,
-                lng: 126.83053502,
+                lat: 37.563674655,
+                lng: 126.83035718,
             },
         },
     ];
@@ -25,7 +25,7 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
+//         scale: '0.5 0.5 0.5',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
     },
@@ -74,7 +74,7 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
         if (place.name.localeCompare("Starbucks") == 0) {
-           model.setAttribute('scale', '0.5 0.5 0.5');
+//            model.setAttribute('scale', '0.5 0.5 0.5');
 //           model.setAttribute('rotation', '0 180 0');
            model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
         } else {
