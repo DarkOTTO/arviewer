@@ -1,7 +1,4 @@
 window.onload = () => {
-    const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
-
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
@@ -80,10 +77,13 @@ function renderPlaces(places) {
            model.setAttribute('scale', '0.5 0.5 0.5');
            model.setAttribute('rotation', '0 180 0');
            model.setAttribute('obj-model', './assets/obj/starbucks.obj');
+        } else {
+//           setModel(models[modelIndex], model);
+           model.setAttribute('scale', '0.1 0.1 0.1');
+           model.setAttribute('rotation', '0 180 0');
+           model.setAttribute('gltf-model', './assets/articuno/scene.gltf');
     	   const div = document.querySelector('.instructions');
 	   div.innerText = model.info;
-        } else {
-           setModel(models[modelIndex], model);
         }
 
         model.setAttribute('animation-mixer', '');
