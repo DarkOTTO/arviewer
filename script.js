@@ -8,13 +8,13 @@ window.onload = () => {
 
 function staticLoadPlaces() {
     return [
-        {
-            name: 'Pokèmon',
-            location: {
-                lat: 37.611956,
-                lng: 127.159823,
-            },
-        },
+//        {
+//            name: 'Pokèmon',
+//            location: {
+//                lat: 37.611956,
+//                lng: 127.159823,
+//            },
+//        },
         {
             name: 'Starbucks",
             location: {
@@ -76,15 +76,15 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        if (place.name == 'Starbucks') {
-           model.setAttribute('scale', '0.5 0.5 0.5');
-           model.setAttribute('rotation', '0 180 0');
-           model.setAttribute('obj-model', './assets/obj/starbucks.obj');
-    	   const div = document.querySelector('.instructions');
-	   div.innerText = model.info;
-        } else {
+//        if (place.name == 'Starbucks') {
+//           model.setAttribute('scale', '0.5 0.5 0.5');
+//           model.setAttribute('rotation', '0 180 0');
+ //          model.setAttribute('obj-model', './assets/obj/starbucks.obj');
+//    	   const div = document.querySelector('.instructions');
+//	   div.innerText = model.info;
+//        } else {
            setModel(models[modelIndex], model);
-        }
+//        }
 
         model.setAttribute('animation-mixer', '');
 
