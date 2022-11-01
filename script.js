@@ -15,8 +15,8 @@ function staticLoadPlaces() {
         {
             name: 'Starbucks",
             location: {
-                lat: 37.563674655,
-                lng: 126.83035718,
+                lat: 37.563388379,
+                lng: 126.83021069,
             },
         },
     ];
@@ -85,20 +85,21 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
 	val position = getLocation();
-//         model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};`);
-	model.setAttribute('gps-entity-place', 'latitude: position.latitude; longitude: position.longitude;');
+        model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};`);
+// 	model.setAttribute('gps-entity-place', 'latitude: position.latitude; longitude: position.longitude;');
 
-//         if (place.name.localeCompare("Starbucks") == 0) {
+        if (place.name.localeCompare("Starbucks") == 0) {
 //            model.setAttribute('scale', '0.5 0.5 0.5');
 //           model.setAttribute('rotation', '0 180 0');
            model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
-//         } else {
-//           setModel(models[modelIndex], model);
-//            model.setAttribute('scale', '0.1 0.1 0.1');
-//            model.setAttribute('rotation', '0 180 0');
-//            model.setAttribute('gltf-model', './assets/articuno/scene.gltf');
+        } else {
+          setModel(models[modelIndex], model);
+           model.setAttribute('scale', '0.1 0.1 0.1');
+           model.setAttribute('rotation', '0 180 0');
+           model.setAttribute('gltf-model', './assets/articuno/scene.gltf');
     	   const div = document.querySelector('.instructions');
-	   div.innerText = position.coords.latitude + ' ' + position.coords.longitude;//model.info;
+// 	   div.innerText = position.coords.latitude + ' ' + position.coords.longitude;
+	   div.innerText = model.info;
 //         }
 
         model.setAttribute('animation-mixer', '');
