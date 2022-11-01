@@ -11,7 +11,22 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
-    <script src="./script.js"></script>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) { // GPS를 지원하면
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    alert(position.coords.latitude + ' ' + position.coords.longitude);
+                }, function(error) {
+                    console.error(error);
+                });
+            } else {
+            alert('GPS를 지원하지 않습니다');
+            }
+        }
+        getLocation();
+    </script>
+
+<!--     <script src="./script.js"></script> -->
     <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 
