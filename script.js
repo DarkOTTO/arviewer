@@ -80,8 +80,11 @@ function renderPlaces(places) {
         let obj = document.createElement('a-obj-model');
         let src = './assets/obj/starbucks.obj';
         let mtl = './assets/obj/starbucks.mtl';
+        let texture = './assets/obj/starbucks_cup.jpg';
         obj.setAttribute('src', src);
         obj.setAttribute('mtl', mtl);
+        obj.setAttribute('texture', texture);
+        obj.setAttribute('scale', '0.5 0.5 0.5');
         obj.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('animation-mixer', '');
 
