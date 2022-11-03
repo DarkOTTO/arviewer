@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'C';
+    button.innerText = '﹖';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
@@ -15,13 +15,13 @@ function staticLoadPlaces() {
                 lng: 127.159823,
             },
         },
-        {
-            name: 'Starbucks",
-            location: {
-                lat: 37.563388379,
-                lng: 126.83021069,
-            },
-        },
+//        {
+//            name: 'Magnemite',
+//            location: {
+//                lat: 37.563667,
+//                lng: 126.830436,
+//            },
+//        },
     ];
 }
 
