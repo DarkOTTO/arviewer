@@ -77,15 +77,18 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
 //        setModel(models[modelIndex], model);
-        let obj = document.createElement('a-obj-model');
+//        let obj = document.createElement('a-obj-model');
         let src = './assets/obj/starbucks.obj';
         let mtl = './assets/obj/starbucks.mtl';
         let texture = './assets/obj/starbucks_cup.jpg';
-        obj.setAttribute('src', src);
-        obj.setAttribute('mtl', mtl);
-        obj.setAttribute('texture', texture);
-        obj.setAttribute('scale', '0.5 0.5 0.5');
-        obj.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('obj-model', "obj:${src}; mtl:${mtl};");
+        model.setAttribute('scale', '0.5 0.5 0.5');
+        
+//        obj.setAttribute('src', src);
+//        obj.setAttribute('mtl', mtl);
+//        obj.setAttribute('texture', texture);
+//        obj.setAttribute('scale', '0.5 0.5 0.5');
+//        obj.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('animation-mixer', '');
 
 //        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
@@ -95,7 +98,7 @@ function renderPlaces(places) {
 //            setModel(models[newIndex], entity);
 //        });
 
-//        scene.appendChild(model);
-        scene.appendChild(obj);
+        scene.appendChild(model);
+//        scene.appendChild(obj);
     });
 };
