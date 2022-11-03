@@ -23,7 +23,7 @@ function staticLoadPlaces() {
 //            },
 //        },
     ];
-}
+};
 
 var models = [
     {
