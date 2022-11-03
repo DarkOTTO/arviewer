@@ -116,4 +116,4 @@ function renderPlaces(places) {
 
         scene.appendChild(model);
     });
-
+}
