@@ -25,19 +25,6 @@ function staticLoadPlaces() {
     ];
 }
 
-function getLocation() {
-    if (navigator.geolocation) { // GPS를 지원하면
-	navigator.geolocation.getCurrentPosition(function(position) {
-	    alert(position.coords.latitude + ' ' + position.coords.longitude);
-	    return position.coords;
-	}, function(error) {
-	    console.error(error);
-	});
-    } else {
-    	alert('GPS를 지원하지 않습니다');
-    }
-}
-
 var models = [
     {
         url: './assets/magnemite/scene.gltf',
@@ -87,23 +74,9 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-	val position = getLocation();
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-// 	model.setAttribute('gps-entity-place', 'latitude: position.latitude; longitude: position.longitude;');
 
-        if (place.name.localeCompare("Starbucks") == 0) {
-//            model.setAttribute('scale', '0.5 0.5 0.5');
-//           model.setAttribute('rotation', '0 180 0');
-           model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
-        } else {
-          setModel(models[modelIndex], model);
-           model.setAttribute('scale', '0.1 0.1 0.1');
-           model.setAttribute('rotation', '0 180 0');
-           model.setAttribute('gltf-model', './assets/articuno/scene.gltf');
-    	   const div = document.querySelector('.instructions');
-// 	   div.innerText = position.coords.latitude + ' ' + position.coords.longitude;
-	   div.innerText = model.info;
-//         }
+        setModel(models[modelIndex], model);
 
         model.setAttribute('animation-mixer', '');
 
