@@ -1,4 +1,7 @@
 window.onload = () => {
+    const button = document.querySelector('button[data-action="change"]');
+    button.innerText = '﹖';
+
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
@@ -38,7 +41,7 @@ function getLocation() {
 var models = [
     {
         url: './assets/magnemite/scene.gltf',
-//         scale: '0.5 0.5 0.5',
+        scale: '0.5 0.5 0.5',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
     },
@@ -103,6 +106,13 @@ function renderPlaces(places) {
 //         }
 
         model.setAttribute('animation-mixer', '');
+
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            var entity = document.querySelector('[gps-entity-place]');
+            modelIndex++;
+            var newIndex = modelIndex % models.length;
+            setModel(models[newIndex], entity);
+        });
 
         scene.appendChild(model);
     });
