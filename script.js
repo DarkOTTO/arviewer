@@ -88,7 +88,7 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
 	val position = getLocation();
-        model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 // 	model.setAttribute('gps-entity-place', 'latitude: position.latitude; longitude: position.longitude;');
 
         if (place.name.localeCompare("Starbucks") == 0) {
