@@ -76,17 +76,23 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
-
+//        setModel(models[modelIndex], model);
+        let obj = document.createElement('a-obj-model');
+        let src = './assets/obj/starbucks.obj';
+        let mtl = './assets/obj/starbucks.mtl';
+        obj.setAttribute('src', src);
+        obj.setAttribute('mtl', mtl);
+        obj.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('animation-mixer', '');
 
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
-        });
+//        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+//            var entity = document.querySelector('[gps-entity-place]');
+//            modelIndex++;
+//            var newIndex = modelIndex % models.length;
+//            setModel(models[newIndex], entity);
+//        });
 
-        scene.appendChild(model);
+//        scene.appendChild(model);
+        scene.appendChild(obj);
     });
-}
+};
