@@ -81,7 +81,7 @@ function renderPlaces(places) {
         let mtl = './assets/obj/starbucks.mtl';
         let texture = './assets/obj/starbucks_cup.jpg';
         model.setAttribute('obj-model', "obj:${src}; mtl:${mtl};");
-        model.setAttribute('scale', '0.5 0.5 0.5');
+        model.setAttribute('scale', '0.3 0.3 0.3');
         
         model.setAttribute('animation-mixer', '');
 
