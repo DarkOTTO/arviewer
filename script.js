@@ -77,8 +77,8 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
 //        setModel(models[modelIndex], model);
-        let src = './assets/obj/starbucks.obj';
-        let mtl = './assets/obj/starbucks.mtl';
+        let src = './assets/obj/mcd.obj';
+        let mtl = './assets/obj/mcd.mtl';
         let texture = './assets/obj/starbucks_cup.jpg';
         model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
         model.setAttribute('scale', '0.3 0.3 0.3');
