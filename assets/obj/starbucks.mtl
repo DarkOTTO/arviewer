@@ -1,9 +1,13 @@
-newmtl cupSG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.50 0.50 0.50
-Tf 1.00 1.00 1.00
-map_Kd starbucks_cup.png
-Ni 0.00
-Ks 0.00 0.00 0.00
-Ns 1022.00
+# Blender MTL File: 'burger.blend'
+# Material Count: 1
+
+newmtl phong1
+Ns 1000.000000
+Ka 0.500000 0.500000 0.500000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd starbucks_cup.jpg
