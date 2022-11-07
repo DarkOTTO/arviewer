@@ -1,7 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
 mtllib starbucks.mtl
-g default
 v -2.665815 11.115448 -3.669180
 v -3.669179 11.115448 -2.665815
 v -3.571015 11.206244 -2.594494
@@ -1317,7 +1316,6 @@ vn -0.995148 -0.098385 -0.000001
 vn -0.946443 -0.098381 -0.307516
 vn -0.805093 -0.098384 -0.584933
 s 1
-g starbuck2
 usemtl cupSG
 f 1/1/1 2/2/2 4/4/3
 f 4/4/3 2/2/2 3/3/4
