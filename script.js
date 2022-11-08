@@ -4,6 +4,9 @@ window.onload = () => {
 
     let places = staticLoadPlaces();
     renderPlaces(places);
+
+    const jsonData= require('./poi/poi.json'); 
+    console.log(jsonData);
 };
 
 function staticLoadPlaces() {

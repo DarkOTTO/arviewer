@@ -22,7 +22,7 @@
       },
     },
     {
-      "name": "스타벅스",
+      "name": "맥도날드",
       "id": "10099",
       "poiCoord": {
         "lat": 37.563676940,
@@ -32,8 +32,8 @@
       "tel": "02)5782737",
       "footprintGeometryNum": 0,
       "footprintGeometry": [],
-      "chainFamily": "cf_starbucks",
-      "menu": "아메리카노 : 4,100원",
+      "chainFamily": "cf_mcdonald",
+      "menu": "맥날 : 4,100원",
       "hourlyFee": 0,
       "openTime": {
         "open_time": "07:00",
