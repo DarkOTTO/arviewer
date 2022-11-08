@@ -1,3 +1,5 @@
+import jsonData from './poi/poi.json' assert {type: 'json'};
+
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
