@@ -7,7 +7,7 @@ window.onload = () => {
     let places = staticLoadPlaces();
     renderPlaces(places);
 
-    console.log(jsonData.poi.name);
+    console.log(jsonData.poi[0].name);
 //    const jsonData= require('./poi/poi.json'); 
 //    console.log(jsonData);
 };
