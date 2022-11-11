@@ -14,7 +14,7 @@ window.onload = () => {
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
-	          console.log("getLocation() : " + position.coords.latitude + ' ' + position.coords.longitude);
+	          alert('getLocation() : ' + position.coords.latitude + ' ' + position.coords.longitude);
 	          return position.coords;
 	      }, function(error) {
 	          console.error(error);
