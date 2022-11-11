@@ -8,9 +8,21 @@ window.onload = () => {
     renderPlaces(places);
 
     console.log(jsonData.poi[0].name);
-//    const jsonData= require('./poi/poi.json'); 
-//    console.log(jsonData);
+    getLocation();
 };
+
+function getLocation() {
+    if (navigator.geolocation) { // GPS를 지원하면
+	navigator.geolocation.getCurrentPosition(function(position) {
+	    console.log("getLocation() : " + position.coords.latitude + ' ' + position.coords.longitude);
+	    return position.coords;
+	}, function(error) {
+	    console.error(error);
+	});
+    } else {
+    	alert('GPS를 지원하지 않습니다');
+    }
+}
 
 function staticLoadPlaces() {
     return [
