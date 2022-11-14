@@ -99,7 +99,7 @@ function renderPlaces(places) {
         let mtl = './assets/obj/burger.mtl';
         let texture = './assets/obj/starbucks_cup.jpg';
         model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
-	model.setAttribute('material', 'src: ${texture};'); 
+	model.setAttribute('material', "src: ${texture};"); 
         model.setAttribute('scale', '2.0 2.0 2.0');
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
