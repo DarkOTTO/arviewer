@@ -495,7 +495,7 @@ class AScene extends AEntity {
    * `getAttribute` used to be `getDOMAttribute` and `getComputedAttribute` used to be
    * what `getAttribute` is now. Now legacy code.
    */
-  getComputedAttribut (attr) {
+  getComputedAttribute (attr) {
     warn('`getComputedAttribute` is deprecated. Use `getAttribute` instead.');
     this.getAttribute(attr);
   }
