@@ -2,10 +2,11 @@ import jsonData from './poi/poi.json' assert {type: "json"};
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '1';
+    button.innerText = '2';
 
-    let places = staticLoadPlaces();
-    renderPlaces(places);
+//    let places = staticLoadPlaces();
+//    renderPlaces(places);
+    renderPlaces();
 
     console.log(jsonData.poi[0].name);
     getLocation();
@@ -84,7 +85,7 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-function renderPlaces(places) {
+function renderPlaces() {
     var index = 0;
     let scene = document.querySelector('a-scene');
 
