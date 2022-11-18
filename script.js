@@ -100,7 +100,7 @@ function renderPlaces(places) {
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
 //         let texture = './assets/obj/starbucks_cup.jpg';
-	let basePath = './assets/obj/";
+	let basePath = './assets/obj/';
 	let src = basePath + jsonData.poi[index].objFile;
 	let mtl = basePath + jsonData.poi[index].mtlFile;
        model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
