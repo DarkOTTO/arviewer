@@ -19,7 +19,8 @@
       "openTime": {
         "open_time": "07:00",
         "close_time": "22:00"
-      }
+      },
+      "objFile": "starbucks.obj"
     },
     {
       "name": "맥도날드",
@@ -38,7 +39,8 @@
       "openTime": {
         "open_time": "07:00",
         "close_time": "22:00"
-      }
+      },
+      "objFile": "burger.obj"
     }
     ]
 }
