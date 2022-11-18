@@ -85,21 +85,26 @@ var setModel = function (model, entity) {
 };
 
 function renderPlaces(places) {
+    var index = 0;
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
-
+//         let latitude = place.location.lat;
+//         let longitude = place.location.lng;
+	let latitude = jsonData.poi[index].poiCoord.lat;
+        let longitude = jsonData.poi[index].poiCoord.lon;
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
 //        setModel(models[modelIndex], model);
-        let src = './assets/obj/burger.obj';
-        let mtl = './assets/obj/burger.mtl';
-        let texture = './assets/obj/starbucks_cup.jpg';
-        model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
-	model.setAttribute('material', `src: ${texture};`);
+//         let src = './assets/obj/burger.obj';
+//         let mtl = './assets/obj/burger.mtl';
+//         let texture = './assets/obj/starbucks_cup.jpg';
+	let basePath = './assets/obj/";
+	let src = basePath + jsonData.poi[index].objFile;
+	let mtl = basePath + jsonData.poi[index].mtlFile;
+       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+//        model.setAttribute('material', `src: ${texture};`);
         model.setAttribute('scale', '2.0 2.0 2.0');
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
