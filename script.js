@@ -88,7 +88,7 @@ function renderPlaces(places) {
     var index = 0;
     let scene = document.querySelector('a-scene');
 
-    places.forEach((place) => {
+//     places.forEach((place) => {
 //         let latitude = place.location.lat;
 //         let longitude = place.location.lng;
 	let latitude = jsonData.poi[index].poiCoord.lat;
@@ -119,6 +119,5 @@ function renderPlaces(places) {
 //        });
 
         scene.appendChild(model);
-//        scene.appendChild(obj);
-    });
+//     });
 };
