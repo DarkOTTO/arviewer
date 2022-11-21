@@ -2,7 +2,7 @@ import jsonData from './poi/poi.json' assert {type: "json"};
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '1';
+    button.innerText = '0';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
@@ -65,7 +65,7 @@ var models = [
     },
 ];
 
-var modelIndex = 0;
+var modelIndex = 1;
 var setModel = function (model, entity) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
