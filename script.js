@@ -4,9 +4,9 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '0';
 
-//    let places = staticLoadPlaces();
-//    renderPlaces(places);
-    renderPlaces();
+   let places = staticLoadPlaces();
+   renderPlaces(places);
+//     renderPlaces();
 
     console.log(jsonData.poi[0].name);
     getLocation();
@@ -85,15 +85,15 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-function renderPlaces() {
+function renderPlaces(places) {
     var index = 0;
     let scene = document.querySelector('a-scene');
 
-//     places.forEach((place) => {
-//         let latitude = place.location.lat;
-//         let longitude = place.location.lng;
-	let latitude = jsonData.poi[index].poiCoord.lat;
-        let longitude = jsonData.poi[index].poiCoord.lon;
+    places.forEach((place) => {
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
+// 	let latitude = jsonData.poi[index].poiCoord.lat;
+//         let longitude = jsonData.poi[index].poiCoord.lon;
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
@@ -120,5 +120,5 @@ function renderPlaces() {
 //        });
 
         scene.appendChild(model);
-//     });
+    });
 };
