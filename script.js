@@ -104,10 +104,11 @@ function renderPlaces() {
 	let basePath = './assets/obj/';
 	let src = basePath + jsonData.poi[index].objFile;
 	let mtl = basePath + jsonData.poi[index].mtlFile;
-       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+//       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
 //        model.setAttribute('material', `src: ${texture};`);
-        model.setAttribute('scale', '2.0 2.0 2.0');
-        model.setAttribute('rotation', '0 0 0');
+        setModel(models[1], model);
+//        model.setAttribute('scale', '2.0 2.0 2.0');
+//        model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
         
         model.setAttribute('animation-mixer', '');
