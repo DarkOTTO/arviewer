@@ -1,3 +1,117 @@
+# 3.4.1
+
+- Support for other Barcode Markers #469:
+  - AR_MATRIX_CODE_5x5_BCH_22_12_5
+  - AR_MATRIX_CODE_5x5_BCH_22_7_7
+  - AR_MATRIX_CODE_5x5
+  - AR_MATRIX_CODE_6x6
+- New `arjs-nft-init-data` event to get importan NFT marker data (width, height and dpi) #469;
+- Fix for oriantation on iOS #432
+- Typo fix in an example #431
+# 3.4.0
+
+- New gh build script to compile libs see #415
+- Restored multimarker examples (learner and player) see #419
+- New A-Frame location based code see #406
+# 3.4.0-alpha-rc2
+
+- Fixed bug in aframe image tracking see #407
+- Enhanced three location based code #409 #410
+- Removed double build in Three.js (nft or not) #407
+- Added prettier as formatter and husky as pre-formatter #407
+- New action github script to test linting and code formatting #407
+# 3.4.0-alpha-rc1
+
+- ES6 feature into master
+- New threejs location based
+- New dispose methods in arjs-context.js and arjs-source.js
+- Use of artoolkit5-js instead of old jsartoolkit5 as base code
+- Other bug fixes see PR #400
+# 3.3.3
+
+- Fixed bug which prevents `minDistance` and `maxDistance` working with a simulated location
+
+- Fixed typo in name of `gps-entity-place-update-position` event
+
+# 3.3.2
+
+- Fixed bug in `arjs-webcam-texture component` which caused the webcam stream to freeze on iOS. Thanks to @stevenlybeck for this.
+
+- CORS proxy removed from examples
+
+- Added custom found/lost events to markerControls for three.js core (thanks to @fcor)
+
+- Deactivated GPS listener when AR.js app not in the foreground (thanks to @NVFedorov for raising this issue)
+
+- update license wording (thanks to @chingucoding)
+  
+# 3.3.1
+
+- Fix minor location-based bugs
+
+# 3.3.0
+
+- Fix shaking of far/near entities on location-based using new configurable properties (thanks to @nickw1)
+
+# 3.2.1
+
+- show camera error alert after dispatching `camera-error` event
+
+# 3.2.0
+
+- support arbitrarily distant places on location-based (thanks to @nickw1, see PR #119)
+- minor bug fixes
+
+# 3.1.0
+
+- added new, alternative version for `location-based` using a projected camera based on Spherical Mercator. For this purpose we introduce two new aframe components: `gps-projected-camera` and `gps-projected-entity-place` (thanks to @nickw1)
+- added video stop on marker being lost (nft-video example)
+- fixed rotation bug on X axis see issue #59, restored shift position on y instead of z
+- removed links to old repository in the examples
+- added `maxDistance` property on location-based
+- new `arjs-nft-loaded` event listener for **NFT** markers, dispatched when all **NFT** markers are loaded see PR #98 and issue #97
+
+# 3.0.2
+
+- update documentation using latest aframe version on every example
+
+# 3.0.1
+
+- fixed `minDistance` property updating on location based
+- enhanced Image tracking examples
+
+# 3.0.0
+
+- fix minor Readme paths/typos
+
+# 3.0.0-beta-3
+
+- cleaned location based examples
+- removed `gps-camera-debug` component
+- enhanced Custom Events payloads
+
+# 3.0.0-beta-2
+
+- Fixed some path issues to make NFT work with remote sites
+- Updated HOW_TO_RELEASE.md for new structure
+
+# 3.0.0-beta
+
+- Added Image Tracking (NFT) support
+- New structure: 2 alternative versions (A-Frame/Three.js image tracking+location based, A-Frame/Three.js markers+location based)
+- Added a Web Worker for Image Tracking performances (as Blob object to be used cross-domain)
+- New examples structure, divided by features
+- Added examples for Image Tracking
+- Removed minified versions
+- Removed UglifyJS dependency
+- ES6 support
+- Move to new organization
+- Move to new repository
+- Change package.json info
+- Cleaned code from some examples/experiments
+- Removed obsolete code of Aruco markers and Google Tango
+- Reduced repository size by ~36%
+
 # 2.2.2
 
 - Restored old camera constraints, was giving better performances for some devices but worst for others.

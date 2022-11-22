@@ -3,12 +3,13 @@
 ```bash
 # Update following files:
 CHANGELOG.md
-three.js/src/threex/threex-artoolkitcontext.js
+three.js/src/threex/arjs-context.js
 package.json
 README.md
 
-# Rebuild and minify everything - aka a-frame and three.js
-make minify
+# Build everything - aka a-frame and three.js
+npm install
+npm run build
 
 # Commit everything
 git add . && git commit -a -m 'Last commit before release' && git push
@@ -34,8 +35,6 @@ npm publish
 # Come back to dev branch
 git checkout dev
 
-# Update CHANGELOG.md - start new dev version
-atom CHANGELOG.md
 
 # update the a-frame codepen if needed
 open "https://codepen.io/jeromeetienne/pen/mRqqzb?editors=1000#0"

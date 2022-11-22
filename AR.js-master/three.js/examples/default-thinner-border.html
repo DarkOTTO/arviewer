@@ -4,7 +4,7 @@
 <script src='vendor/three.js/build/three.js'></script>
 <script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
 <!-- ar.js -->
-<script src="../build/ar.js"></script>
+<script src="../build/ar-threex.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
 
 <!-- Bind window error for error handling -->
@@ -15,9 +15,9 @@
 </script>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center;z-index:1';>
-	<a href='https://github.com/jeromeetienne/AR.js/' target='_blank'>AR.js</a> - use a ar.js marker with pattRatio 0.9
+	<a href='https://github.com/AR-js-org/AR.js/' target='_blank'>AR.js</a> - use a ar.js marker with pattRatio 0.9
 	<br/>
-	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+	Contact me any time at <a href='https://twitter.com/nicolocarp' target='_blank'>@nicolocarp</a>
 </div><script>
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Init
@@ -132,7 +132,7 @@
 	markerScene.add(mesh)
 
 	// add a torus knot
-	var geometry	= new THREE.CubeGeometry(1,1,1);
+	var geometry	= new THREE.BoxGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
 		transparent : true,
 		opacity: 0.5,
@@ -149,7 +149,7 @@
 	markerScene.add( mesh );
 
 	onRenderFcts.push(function(delta){
-		mesh.rotation.x += delta * Math.PI
+		mesh.rotation.y += delta * Math.PI
 	})
 
 	//////////////////////////////////////////////////////////////////////////////////

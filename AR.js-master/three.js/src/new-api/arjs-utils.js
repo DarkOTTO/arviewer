@@ -1,5 +1,6 @@
-var ARjs = ARjs || {}
-ARjs.Utils = {}
+import * as THREE from "three";
+
+const Utils = {};
 
 /**
  * Create a default rendering camera for this trackingBackend. They may be modified later. to fit physical camera parameters
@@ -7,17 +8,16 @@ ARjs.Utils = {}
  * @param {string} trackingBackend - the tracking to user
  * @return {THREE.Camera} the created camera
  */
-ARjs.Utils.createDefaultCamera = function (trackingMethod) {
-    var trackingBackend = this.parseTrackingMethod(trackingMethod).trackingBackend
-    // Create a camera
-    if (trackingBackend === 'artoolkit') {
-        var camera = new THREE.Camera();
-    } else if (trackingBackend === 'aruco') {
-        var camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.01, 100);
-    } else console.assert(false, 'unknown trackingBackend: ' + trackingBackend)
+Utils.createDefaultCamera = function (trackingMethod) {
+  var trackingBackend =
+    this.parseTrackingMethod(trackingMethod).trackingBackend;
+  // Create a camera
+  if (trackingBackend === "artoolkit") {
+    var camera = new THREE.Camera();
+  } else console.assert(false, "unknown trackingBackend: " + trackingBackend);
 
-    return camera
-}
+  return camera;
+};
 
 /**
  * parse tracking method
@@ -25,21 +25,22 @@ ARjs.Utils.createDefaultCamera = function (trackingMethod) {
  * @param {String} trackingMethod - the tracking method to parse
  * @return {Object} - various field of the tracking method
  */
-ARjs.Utils.parseTrackingMethod = function (trackingMethod) {
+Utils.parseTrackingMethod = function (trackingMethod) {
+  if (trackingMethod === "best") {
+    trackingMethod = "area-artoolkit";
+  }
 
-    if (trackingMethod === 'best') {
-        trackingMethod = 'area-artoolkit';
-    }
+  if (trackingMethod.startsWith("area-")) {
+    return {
+      trackingBackend: trackingMethod.replace("area-", ""),
+      markersAreaEnabled: true,
+    };
+  } else {
+    return {
+      trackingBackend: trackingMethod,
+      markersAreaEnabled: false,
+    };
+  }
+};
 
-    if (trackingMethod.startsWith('area-')) {
-        return {
-            trackingBackend: trackingMethod.replace('area-', ''),
-            markersAreaEnabled: true,
-        }
-    } else {
-        return {
-            trackingBackend: trackingMethod,
-            markersAreaEnabled: false,
-        }
-    }
-}
+export default Utils;

@@ -1,3 +1,8 @@
+import * as AFRAME from 'aframe';
+import Profile from '../../three.js/src/threex/arjs-profile';
+import Session from '../../three.js/src/new-api/arjs-session';
+import { SessionDebugUI } from '../../three.js/src/new-api/arjs-debugui';
+
 AFRAME.registerSystem('arjs', {
     schema: {
         trackingMethod: {
@@ -6,7 +11,7 @@ AFRAME.registerSystem('arjs', {
         },
         debugUIEnabled: {
             type: 'boolean',
-            default: true,
+            default: false,
         },
         areaLearningButton: {
             type: 'boolean',
@@ -15,6 +20,15 @@ AFRAME.registerSystem('arjs', {
         performanceProfile: {
             type: 'string',
             default: 'default',
+        },
+        labelingMode: {
+            type: 'string',
+            default: '',
+        },
+        // new video texture mode (location based only)
+        videoTexture: {
+            type: 'boolean',
+            default: false
         },
         // old parameters
         debug: {
@@ -32,10 +46,6 @@ AFRAME.registerSystem('arjs', {
         patternRatio: {
             type: 'number',
             default: -1,
-        },
-        labelingMode: {
-            type: 'string',
-            default: '',
         },
         cameraParametersUrl: {
             type: 'string',
@@ -81,27 +91,35 @@ AFRAME.registerSystem('arjs', {
             type: 'number',
             default: -1
         },
+        errorPopup: {
+            type: 'string',
+            default: ''
+        }
     },
 
     //////////////////////////////////////////////////////////////////////////////
     //		Code Separator
     //////////////////////////////////////////////////////////////////////////////
 
-
     init: function () {
         var _this = this
 
+        // If videoTexture is set, skip the remainder of the setup entirely and just use the arjs-webcam-texture component
+        if(this.data.videoTexture === true && this.data.sourceType === 'webcam') {
+            var webcamEntity = document.createElement("a-entity");
+            webcamEntity.setAttribute("arjs-webcam-texture", true);
+            this.el.sceneEl.appendChild(webcamEntity);
+            return;
+        }
 
         //////////////////////////////////////////////////////////////////////////////
         //		setup arProfile
         //////////////////////////////////////////////////////////////////////////////
 
-        var arProfile = this._arProfile = new ARjs.Profile()
+        var arProfile = this._arProfile = new Profile()
             .trackingMethod(this.data.trackingMethod)
             .performance(this.data.performanceProfile)
             .defaultMarker()
-
-
 
         //////////////////////////////////////////////////////////////////////////////
         //		honor this.data and setup arProfile with it
@@ -146,7 +164,7 @@ AFRAME.registerSystem('arjs', {
             //////////////////////////////////////////////////////////////////////////////
             //		build ARjs.Session
             //////////////////////////////////////////////////////////////////////////////
-            var arSession = _this._arSession = new ARjs.Session({
+            var arSession = _this._arSession = new Session({
                 scene: scene,
                 renderer: renderer,
                 camera: camera,
@@ -180,7 +198,6 @@ AFRAME.registerSystem('arjs', {
                 }
             }
 
-
             //////////////////////////////////////////////////////////////////////////////
             //		honor .debugUIEnabled
             //////////////////////////////////////////////////////////////////////////////
@@ -196,7 +213,7 @@ AFRAME.registerSystem('arjs', {
                 }
 
                 // create sessionDebugUI
-                var sessionDebugUI = new ARjs.SessionDebugUI(arSession)
+                var sessionDebugUI = new SessionDebugUI(arSession)
                 containerElement.appendChild(sessionDebugUI.domElement)
             }
         })
@@ -206,24 +223,45 @@ AFRAME.registerSystem('arjs', {
         //////////////////////////////////////////////////////////////////////////////
         // TODO this is crappy - code an exponential backoff - max 1 seconds
         // KLUDGE: kludge to write a 'resize' event
-        var startedAt = Date.now()
-        var timerId = setInterval(function () {
-            if (Date.now() - startedAt > 10000 * 1000) {
-                clearInterval(timerId)
-                return
+        // var startedAt = Date.now()
+        // var timerId = setInterval(function () {
+        //     if (Date.now() - startedAt > 10000 * 1000) {
+        //         clearInterval(timerId)
+        //         return
+        //     }
+        //     // onResize()
+        //     window.dispatchEvent(new Event('resize'));
+        // }, 1000 / 30)
+
+        function setBackoff(func, millisDuration = Infinity, limit = 1000) {
+            if(func == null || !(Object.prototype.toString.call(func) == '[object Function]')) {
+                return;
+            } 
+            let backoff = 33.3
+            let start = Date.now()
+            let repeat = function() {
+              return (millisDuration == Infinity || (Date.now() - start) < millisDuration)
             }
-            // onResize()
-            window.dispatchEvent(new Event('resize'));
-        }, 1000 / 30)
+            let next = function() {
+                backoff = (backoff * 2) < limit ? (backoff * 2) : limit
+                setTimeout(function() {
+                    func()
+                    if(repeat()) {
+                        next()
+                    }
+                }, backoff)
+            };
+            next()
+        }
+
+        setBackoff(() => {
+            window.dispatchEvent(new Event('resize'))
+        })
     },
 
-    tick: function (now, delta) {
-        var _this = this
-
+    tick: function () {
         // skip it if not yet isInitialised
-        if (this.isReady === false) return
-
-        var arSession = this._arSession
+        if (this.isReady === false || this.data.videoTexture === true) return
 
         // update arSession
         this._arSession.update()
@@ -231,4 +269,18 @@ AFRAME.registerSystem('arjs', {
         // copy projection matrix to camera
         this._arSession.onResize()
     },
+
+    _displayErrorPopup: function(msg) {
+        if (this.data.errorPopup !== '') {
+            let errorPopup = document.getElementById(this.data.errorPopup);
+            if (!errorPopup) {
+                errorPopup = document.createElement('div');
+                errorPopup.setAttribute('id', this.data.errorPopup);
+                document.body.appendChild(errorPopup);
+            }
+            errorPopup.innerHTML = msg;
+        } else {
+            alert(msg);
+        }
+    }
 })
