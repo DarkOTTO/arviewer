@@ -98,17 +98,16 @@ function renderPlaces() {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
 //        setModel(models[modelIndex], model);
-//         let src = './assets/obj/burger.obj';
-//         let mtl = './assets/obj/burger.mtl';
+        let src = './assets/obj/burger.obj';
+        let mtl = './assets/obj/burger.mtl';
 //         let texture = './assets/obj/starbucks_cup.jpg';
 	let basePath = './assets/obj/';
 	let src = basePath + jsonData.poi[index].objFile;
 	let mtl = basePath + jsonData.poi[index].mtlFile;
-//       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+      model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
 //        model.setAttribute('material', `src: ${texture};`);
-        setModel(models[1], model);
-//        model.setAttribute('scale', '2.0 2.0 2.0');
-//        model.setAttribute('rotation', '0 0 0');
+       model.setAttribute('scale', '2.0 2.0 2.0');
+       model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
         
         model.setAttribute('animation-mixer', '');
