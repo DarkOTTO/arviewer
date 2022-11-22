@@ -86,7 +86,7 @@ var setModel = function (model, entity) {
 };
 
 function renderPlaces() {
-    var index = 0;
+    var index = 1;
     let scene = document.querySelector('a-scene');
 
 //     places.forEach((place) => {
