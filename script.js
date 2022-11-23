@@ -2,7 +2,7 @@ import jsonData from './poi/poi.json' assert {type: "json"};
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '11';
+    button.innerText = '12';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
@@ -104,7 +104,8 @@ function renderPlaces() {
 	let basePath = './assets/obj/';
 	let src = basePath + jsonData.poi[index].objFile;
 	let mtl = basePath + jsonData.poi[index].mtlFile;
-      model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+//       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+      model.setAttribute('obj-model', `obj: ${src};`);
 //        model.setAttribute('material', `src: ${texture};`);
        model.setAttribute('scale', '2.0 2.0 2.0');
        model.setAttribute('rotation', '0 0 0');
