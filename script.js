@@ -2,7 +2,7 @@ import jsonData from './poi/poi.json' assert {type: "json"};
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '11';
+    button.innerText = '10';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
