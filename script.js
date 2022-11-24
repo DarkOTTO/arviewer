@@ -1,8 +1,10 @@
 import jsonData from './poi/poi.json' assert {type: "json"};
 
+var index = 1;
+
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '12';
+    button.innerText = index + '2';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
@@ -86,13 +88,18 @@ var setModel = function (model, entity) {
 };
 
 function renderPlaces() {
-    var index = 1;
     let scene = document.querySelector('a-scene');
+    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+        var entity = document.querySelector('[gps-entity-place]');
+        index++;
+        var newIndex = index % 2;
+//        setModel(models[newIndex], entity);
+    });
 
 //     places.forEach((place) => {
 //         let latitude = place.location.lat;
 //         let longitude = place.location.lng;
-	let latitude = jsonData.poi[index].poiCoord.lat;
+        let latitude = jsonData.poi[index].poiCoord.lat;
         let longitude = jsonData.poi[index].poiCoord.lon;
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
@@ -110,15 +117,8 @@ function renderPlaces() {
        model.setAttribute('scale', '2.0 2.0 2.0');
        model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
-        
-        model.setAttribute('animation-mixer', '');
 
-//        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-//            var entity = document.querySelector('[gps-entity-place]');
-//            modelIndex++;
-//            var newIndex = modelIndex % models.length;
-//            setModel(models[newIndex], entity);
-//        });
+        model.setAttribute('animation-mixer', '');
 
         scene.appendChild(model);
 //     });
