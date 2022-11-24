@@ -93,6 +93,8 @@ function renderPlaces() {
         var entity = document.querySelector('[gps-entity-place]');
         index++;
         var newIndex = index % 2;
+        index = newIndex;
+        window.onload();
 //        setModel(models[newIndex], entity);
     });
 
@@ -108,14 +110,14 @@ function renderPlaces() {
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
 //         let texture = './assets/obj/starbucks_cup.jpg';
-	let basePath = './assets/obj/';
-	let src = basePath + jsonData.poi[index].objFile;
-	let mtl = basePath + jsonData.poi[index].mtlFile;
+        let basePath = './assets/obj/';
+        let src = basePath + jsonData.poi[index].objFile;
+        let mtl = basePath + jsonData.poi[index].mtlFile;
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
-      model.setAttribute('obj-model', `obj: ${src};`);
+        model.setAttribute('obj-model', `obj: ${src};`);
 //        model.setAttribute('material', `src: ${texture};`);
-       model.setAttribute('scale', '2.0 2.0 2.0');
-       model.setAttribute('rotation', '0 0 0');
+        model.setAttribute('scale', '2.0 2.0 2.0');
+        model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
 
         model.setAttribute('animation-mixer', '');
