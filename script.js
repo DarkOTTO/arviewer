@@ -95,7 +95,7 @@ function renderPlaces() {
         var newIndex = index % 2;
         index = newIndex;
         window.onload();
-        renderPlaces();
+//        renderPlaces();
 //        setModel(models[newIndex], entity);
     });
 
