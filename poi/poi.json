@@ -20,8 +20,8 @@
         "open_time": "07:00",
         "close_time": "22:00"
       },
-      "objFile": "burger.obj",
-      "mtlFile": "burger.mtl"
+      "objFile": "starbucks.obj",
+      "mtlFile": "starbucks.mtl"
     },
     {
       "name": "맥도날드",
