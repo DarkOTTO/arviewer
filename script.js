@@ -106,6 +106,7 @@ function renderPlaces() {
         let longitude = jsonData.poi[index].poiCoord.lon;
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+	console.log("lat : " + latitude + ", lon : " + longitude);
 
 //        setModel(models[modelIndex], model);
 //         let src = './assets/obj/burger.obj';
@@ -117,6 +118,7 @@ function renderPlaces() {
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
         model.setAttribute('obj-model', `obj: ${src};`);
 //        model.setAttribute('material', `src: ${texture};`);
+	console.log("obj : " + src + ", mtl : " + mtl);
         model.setAttribute('scale', '2.0 2.0 2.0');
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
