@@ -4,7 +4,7 @@ var index = 1;
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = index + '0';
+    button.innerText = index + '1';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
@@ -112,7 +112,7 @@ function renderPlaces() {
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
 //        let texture = './assets/obj/starbucks_cup.jpg';
-        let basePath = './assets/obj/';
+        let basePath = './assets/ccpoi/';
         let src = basePath + jsonData.poi[index].objFile;
         let mtl = basePath + jsonData.poi[index].mtlFile;
         let texture = basePath + jsonData.poi[index].texture;
