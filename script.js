@@ -111,14 +111,15 @@ function renderPlaces() {
 //        setModel(models[modelIndex], model);
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
-        let texture = './assets/obj/starbucks_cup.jpg';
+//        let texture = './assets/obj/starbucks_cup.jpg';
         let basePath = './assets/obj/';
         let src = basePath + jsonData.poi[index].objFile;
         let mtl = basePath + jsonData.poi[index].mtlFile;
+        let texture = basePath + jsonData.poi[index].texture;
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
         model.setAttribute('obj-model', `obj: ${src};`);
         model.setAttribute('material', `src: ${texture};`);
-	console.log("obj : " + src + ", mtl : " + mtl);
+	console.log("obj : " + src + ", texture : " + texture);
         model.setAttribute('scale', '2.0 2.0 2.0');
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
