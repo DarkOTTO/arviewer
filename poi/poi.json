@@ -20,8 +20,8 @@
         "open_time": "07:00",
         "close_time": "22:00"
       },
-      "objFile": "starbucks.obj",
-      "texture": "starbucks_cup.png"
+      "objFile": "balloon.obj",
+      "texture": "oledtv.jpg"
     },
     {
       "name": "맥도날드",
@@ -41,8 +41,8 @@
         "open_time": "07:00",
         "close_time": "22:00"
       },
-      "objFile": "burger.obj",
-      "texture": "Burger_D.jpg"
+      "objFile": "banner_2side.obj",
+      "texture": "mirine.jpg"
     }
     ]
 }
