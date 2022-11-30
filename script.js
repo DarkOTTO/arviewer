@@ -4,7 +4,7 @@ var index = 1;
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = index + '3';
+    button.innerText = index + '0';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
@@ -111,13 +111,13 @@ function renderPlaces() {
 //        setModel(models[modelIndex], model);
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
-//         let texture = './assets/obj/starbucks_cup.jpg';
+        let texture = './assets/obj/starbucks_cup.jpg';
         let basePath = './assets/obj/';
         let src = basePath + jsonData.poi[index].objFile;
         let mtl = basePath + jsonData.poi[index].mtlFile;
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
         model.setAttribute('obj-model', `obj: ${src};`);
-//        model.setAttribute('material', `src: ${texture};`);
+        model.setAttribute('material', `src: ${texture};`);
 	console.log("obj : " + src + ", mtl : " + mtl);
         model.setAttribute('scale', '2.0 2.0 2.0');
         model.setAttribute('rotation', '0 0 0');
