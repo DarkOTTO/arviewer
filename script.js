@@ -120,7 +120,7 @@ function renderPlaces() {
         model.setAttribute('obj-model', `obj: ${src};`);
         model.setAttribute('material', `src: ${texture};`);
 	console.log("obj : " + src + ", texture : " + texture);
-        model.setAttribute('scale', '0.5 0.5 0.5');
+        model.setAttribute('scale', '1.2 1.2 1.2');
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
 
