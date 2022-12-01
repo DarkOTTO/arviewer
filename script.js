@@ -1,23 +1,22 @@
 import jsonData from './poi/poi.json' assert {type: "json"};
 
-var index = 1;
+var index = 0;
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = index + '1';
+    button.innerText = index + '0';
 
 //    let places = staticLoadPlaces();
 //    renderPlaces(places);
     renderPlaces();
 
-    console.log(jsonData.poi[0].name);
     getLocation();
 };
 
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
-	          alert('getLocation() : ' + position.coords.latitude + ' ' + position.coords.longitude);
+// 	          alert('getLocation() : ' + position.coords.latitude + ' ' + position.coords.longitude);
 	          return position.coords;
 	      }, function(error) {
 	          console.error(error);
