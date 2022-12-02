@@ -57,9 +57,9 @@ function renderPlaces() {
 		        material_shininess: {type: 'number', is: 'uniform'}
     	  },
         vertexShader: [
-            '#version 300 es',
-            'uniform mat4 modelViewMatrix;',
-            'uniform mat4 projectionMatrix;',
+//            '#version 300 es',
+//            'uniform mat4 modelViewMatrix;',
+//            'uniform mat4 projectionMatrix;',
             '',
             'layout(location = 0) in vec3 aPosition;',
             'layout(location = 1) in vec2 aTexCoord;',
@@ -83,8 +83,8 @@ function renderPlaces() {
             '}'
         ].join('\n'),
         fragmentShader: [
-            'version 300 es',
-            'precision mediump float;',
+//            'version 300 es',
+//            'precision mediump float;',
             'vec3 light_position = vec3(100.0, 100.0, 100.0);',
             'vec4 light_specular = vec4(1.0, 1.0, 1.0, 1.0);',
             '',
@@ -97,7 +97,7 @@ function renderPlaces() {
             'in vec3 vVertex;',
             'in vec3 vNormal;',
             '',
-            'out vec4 fragmentColor;',
+//            'out vec4 fragmentColor;',
             '',
             'uniform sampler2D uTexture;',
             'uniform vec4 uColor;',
@@ -126,8 +126,8 @@ function renderPlaces() {
             '}',
             '',
             'void main() {',
-            '//   fragmentColor = directional_light();',
-            '   fragmentColor = vec4(1, 1, 0, 1);',
+            '//   pc_fragColor = directional_light();',
+            '   pc_fragColor = vec4(1, 1, 0, 1);',
             '}'
         ].join('\n')
     });
