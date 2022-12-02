@@ -93,9 +93,7 @@ function renderPlaces() {
         index++;
         var newIndex = index % 2;
         index = newIndex;
-//        window.onload();
         renderPlaces();
-//        setModel(models[newIndex], entity);
     });
 
 //     places.forEach((place) => {
@@ -115,6 +113,24 @@ function renderPlaces() {
         let src = basePath + jsonData.poi[index].objFile;
         let mtl = basePath + jsonData.poi[index].mtlFile;
         let texture = basePath + jsonData.poi[index].texture;
+
+        const uniforms = {
+            uModelMat: ,
+            uViewMat: ,
+            uProjMat: ,
+            uTexture: ,
+            uColor: ,
+            material_ambient: ,
+            material_diffuse: ,
+            material_specular: ,
+            material_shininess: ,
+        }
+
+        const newMaterial = new THREE.ShaderMaterial({
+            vertexShader: require('./assets/shader/vertexshader.glsl'),
+            fragmentShader: require('./assets/shader/fragmentshader.glsl'),
+            uniforms
+        });
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
         model.setAttribute('obj-model', `obj: ${src};`);
         model.setAttribute('material', `src: ${texture};`);
