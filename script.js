@@ -72,8 +72,8 @@ function renderPlaces() {
 		        material_specular: {type: 'vec4', is: 'uniform'},
 		        material_shininess: {type: 'number', is: 'uniform'}
     	  },
-        vertexShader: require('./assets/shader/vertexshader.glsl'),
-        fragmentShader: require('./assets/shader/fragmentshader.glsl'),
+        vertexShader: require('./assets/shader/vertex.glsl'),
+        fragmentShader: require('./assets/shader/fragment.glsl'),
     });
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
