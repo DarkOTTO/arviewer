@@ -41,7 +41,7 @@ function renderPlaces() {
     console.log("lat : " + latitude + ", lon : " + longitude);
 
 //         let src = './assets/obj/burger.obj';
-        let mtl = './assets/obj/burger.mtl';
+//         let mtl = './assets/obj/burger.mtl';
 //        let texture = './assets/obj/starbucks_cup.jpg';
     let basePath = './assets/ccpoi/';
     let src = basePath + jsonData.poi[index].objFile;
@@ -131,8 +131,8 @@ function renderPlaces() {
             '}'
         ].join('\n')
     });
-      model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
-//     model.setAttribute('obj-model', `obj: ${src};`);
+//       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
+    model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', 'shader:custom_shader;');
 //     model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
