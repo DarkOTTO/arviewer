@@ -41,11 +41,11 @@ function renderPlaces() {
     console.log("lat : " + latitude + ", lon : " + longitude);
 
 //         let src = './assets/obj/burger.obj';
-//         let mtl = './assets/obj/burger.mtl';
+        let mtl = './assets/obj/burger.mtl';
 //        let texture = './assets/obj/starbucks_cup.jpg';
     let basePath = './assets/ccpoi/';
     let src = basePath + jsonData.poi[index].objFile;
-    let mtl = basePath + jsonData.poi[index].mtlFile;
+//     let mtl = basePath + jsonData.poi[index].mtlFile;
     let texture = basePath + jsonData.poi[index].texture;
 
     AFRAME.registerShader('custom_shader', {
