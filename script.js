@@ -51,6 +51,7 @@ function renderPlaces() {
     AFRAME.registerShader('custom_shader', {
     	  schema: {
 		        uColor: {type: 'vec4', is: 'uniform'},
+		        uTexture: {type: 'map',   is: 'uniform'},
 		        material_ambient: {type: 'vec4', is: 'uniform'},
 		        material_diffuse: {type: 'vec4', is: 'uniform'},
 		        material_specular: {type: 'vec4', is: 'uniform'},
@@ -133,7 +134,7 @@ function renderPlaces() {
     });
 //       model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
-    model.setAttribute('material', 'shader:custom_shader;');
+    model.setAttribute('material', `shader:custom_shader; uTexture: ${texture};`);
 //     model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '1.2 1.2 1.2');
