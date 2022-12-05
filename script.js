@@ -4,7 +4,7 @@ var index = 1;
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = index + '0';
+    button.innerText = index + '1';
 
     renderPlaces();
 
@@ -83,7 +83,7 @@ function renderPlaces() {
             '}'
         ].join('\n'),
         fragmentShader: [
-//            'version 300 es',
+           'version 300 es',
 //            'precision mediump float;',
             'vec3 light_position = vec3(100.0, 100.0, 100.0);',
             'vec4 light_specular = vec4(1.0, 1.0, 1.0, 1.0);',
