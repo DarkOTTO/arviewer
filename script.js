@@ -134,8 +134,8 @@ function renderPlaces() {
     });
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
-    model.setAttribute('material', `shader: ccpoi_shader; src: url(${texture});`);
-//     model.setAttribute('material', `src: ${texture};`);
+    model.setAttribute('material', `shader: ccpoi_shader;`);
+    model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '1.2 1.2 1.2');
     model.setAttribute('rotation', '0 0 0');
