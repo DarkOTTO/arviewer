@@ -48,7 +48,7 @@ function renderPlaces() {
     let mtl = basePath + jsonData.poi[index].mtlFile;
     let texture = basePath + jsonData.poi[index].texture;
 
-    model.registerShader('custom_shader', {
+    AFRAME.registerShader('ccpoi_shader', {
     	  schema: {
 		        uColor: {type: 'vec4', is: 'uniform'},
 		        uTexture: {type: 'map',   is: 'uniform'},
@@ -134,8 +134,8 @@ function renderPlaces() {
     });
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
-//     model.setAttribute('material', `shader:custom_shader;`);
-    model.setAttribute('material', `src: ${texture};`);
+    model.setAttribute('material', `shader:ccpoi_shader;`);
+//     model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '1.2 1.2 1.2');
     model.setAttribute('rotation', '0 0 0');
