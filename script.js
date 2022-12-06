@@ -51,7 +51,7 @@ function renderPlaces() {
     AFRAME.registerShader('ccpoi_shader', {
     	  schema: {
 		        uColor: {type: 'vec4', is: 'uniform'},
-		        uTexture: {type: 'map',   is: 'uniform'},
+		        src: {type: 'map',   is: 'uniform'},
 		        material_ambient: {type: 'vec4', is: 'uniform'},
 		        material_diffuse: {type: 'vec4', is: 'uniform'},
 		        material_specular: {type: 'vec4', is: 'uniform'},
@@ -100,7 +100,7 @@ function renderPlaces() {
             '',
 //            'out vec4 fragmentColor;',
             '',
-            'uniform sampler2D uTexture;',
+            'uniform sampler2D map;',
             'uniform vec4 uColor;',
             '',
             'vec4 directional_light() {',
@@ -116,7 +116,7 @@ function renderPlaces() {
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0)',
             '      tColor = vec4(1.0, 1.0, 1.0, 1.0);',
             '   else',
-            '      tColor = texture2D(uTexture, vTexCoord);',
+            '      tColor = texture2D(map, vTexCoord);',
             '   color += (material_ambient * tColor);',
             '   color += (ndotl * material_diffuse * tColor);',
             '',
