@@ -127,7 +127,7 @@ function renderPlaces() {
             '}',
             '',
             'void main() {',
-            '//   pc_fragColor = directional_light();',
+//            '   pc_fragColor = directional_light();',
             '   pc_fragColor = vec4(1, 1, 0, 1);',
             '}'
         ].join('\n')
