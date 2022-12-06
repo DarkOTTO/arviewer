@@ -21,6 +21,7 @@
         "close_time": "22:00"
       },
       "objFile": "balloon.obj",
+      "mtlFile": "balloon.mtl",
       "texture": "oledtv.jpg"
     },
     {
@@ -42,6 +43,7 @@
         "close_time": "22:00"
       },
       "objFile": "banner_2side.obj",
+      "mtlFile": "banner_2side.mtl",
       "texture": "mirine.jpg"
     }
     ]
