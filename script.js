@@ -48,7 +48,7 @@ function renderPlaces() {
     let mtl = basePath + jsonData.poi[index].mtlFile;
     let texture = basePath + jsonData.poi[index].texture;
 
-    AFRAME.registerShader('custom_shader', {
+    model.registerShader('custom_shader', {
     	  schema: {
 		        uColor: {type: 'vec4', is: 'uniform'},
 		        uTexture: {type: 'map',   is: 'uniform'},
