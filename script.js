@@ -47,7 +47,7 @@ function renderPlaces() {
     let src = basePath + jsonData.poi[index].objFile;
     let mtl = basePath + jsonData.poi[index].mtlFile;
     let texture = basePath + jsonData.poi[index].texture;
-    const cTexture = new THREE.TextureLoader().load('${texture}');
+    const cTexture = new THREE.TextureLoader().load(`${texture}`);
 
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
