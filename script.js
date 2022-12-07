@@ -61,7 +61,7 @@ function renderPlaces() {
         
         uniforms: {
 		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    src: {type: 't', value: {cTexture}},
+		    src: {type: 't', value: cTexture},
 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
