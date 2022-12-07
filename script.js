@@ -58,15 +58,6 @@ function renderPlaces() {
 		    material_shininess: {type: 'number', is: 'uniform'}
         },
         
-        uniforms: {
-		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    map: {type: 't',   value: null},
-		    material_ambient: {type: 'vec4'},
-		    material_diffuse: {type: 'vec4'},
-		    material_specular: {type: 'vec4'},
-		    material_shininess: {type: 'number'}
-        },
-        
         vertexShader: [
 //            '#version 300 es',
 //            'uniform mat4 modelViewMatrix;',
@@ -93,6 +84,7 @@ function renderPlaces() {
             '   vTexCoord = uv;',
             '}'
         ].join('\n'),
+
         fragmentShader: [
 //            'version 300 es',
 //            'precision mediump float;',
@@ -145,8 +137,8 @@ function renderPlaces() {
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
     const cTexture = new THREE.TextureLoader().load('${texture}');
-    model.setAttribute('material', `shader: ccpoi_shader;`);
-    model.setAttribute('material', `src: ${texture};`);
+    model.setAttribute('material', `shader: ccpoi_shader; src: ${texture};`);
+//     model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '1.2 1.2 1.2');
     model.setAttribute('rotation', '0 0 0');
