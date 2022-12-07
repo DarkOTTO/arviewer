@@ -47,11 +47,12 @@ function renderPlaces() {
     let src = basePath + jsonData.poi[index].objFile;
     let mtl = basePath + jsonData.poi[index].mtlFile;
     let texture = basePath + jsonData.poi[index].texture;
+    const cTexture = new THREE.TextureLoader().load('${texture}');
 
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
-		    src: {type: 'map',   is: 'uniform'},
+		    src: {type: 'map',   is: 'uniform', value: {cTexture}},
 		    material_ambient: {type: 'vec4', is: 'uniform'},
 		    material_diffuse: {type: 'vec4', is: 'uniform'},
 		    material_specular: {type: 'vec4', is: 'uniform'},
@@ -134,10 +135,11 @@ function renderPlaces() {
             '}'
         ].join('\n')
     });
+
+
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
-    const cTexture = new THREE.TextureLoader().load('${texture}');
-    model.setAttribute('material', `shader: ccpoi_shader; src: ${texture};`);
+    model.setAttribute('material', `shader: ccpoi_shader;`);
 //     model.setAttribute('material', `src: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '1.2 1.2 1.2');

@@ -1,5 +1,5 @@
-version 300 es
-precision mediump float;
+//version 300 es
+//precision mediump float;
 vec3 light_position = vec3(100.0, 100.0, 100.0);
 vec4 light_specular = vec4(1.0, 1.0, 1.0, 1.0);
 
@@ -12,9 +12,9 @@ in vec2 vTexCoord;
 in vec3 vVertex;
 in vec3 vNormal;
 
-out vec4 fragmentColor;
+//out vec4 fragmentColor;
 
-uniform sampler2D uTexture;
+uniform sampler2D map;
 uniform vec4 uColor;
 
 vec4 directional_light() {
@@ -30,7 +30,7 @@ vec4 directional_light() {
    if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0)
       tColor = vec4(1.0, 1.0, 1.0, 1.0);
    else
-      tColor = texture2D(uTexture, vTexCoord);
+      tColor = texture2D(map, vTexCoord);
    color += (material_ambient * tColor);
    color += (ndotl * material_diffuse * tColor);
 
@@ -41,6 +41,6 @@ vec4 directional_light() {
 }
 
 void main() {
-//   fragmentColor = directional_light();
-   fragmentColor = vec4(1, 1, 0, 1);
+//   pc_fragColor = directional_light();
+   pc_fragColor = vec4(1, 1, 0, 1);
 }
