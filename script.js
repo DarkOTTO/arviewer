@@ -52,13 +52,22 @@ function renderPlaces() {
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
-		    src: {type: 'map',   is: 'uniform', value: {cTexture}},
+		    src: {type: 'map',   is: 'uniform'},
 		    material_ambient: {type: 'vec4', is: 'uniform'},
 		    material_diffuse: {type: 'vec4', is: 'uniform'},
 		    material_specular: {type: 'vec4', is: 'uniform'},
 		    material_shininess: {type: 'number', is: 'uniform'}
         },
         
+        uniforms: {
+		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    src: {type: 't', value: {cTexture}},
+		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    material_shininess: {type: 'number', value: {40}}
+        },
+
         vertexShader: [
 //            '#version 300 es',
 //            'uniform mat4 modelViewMatrix;',
