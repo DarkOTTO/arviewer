@@ -61,7 +61,7 @@ function renderPlaces() {
         
         uniforms: {
 		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    map: {type: 't', value: cTexture},
+		    map: {type: 't', value: basePath + jsonData.poi[index].texture},
 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
