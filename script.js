@@ -49,14 +49,24 @@ function renderPlaces() {
     let texture = basePath + jsonData.poi[index].texture;
 
     AFRAME.registerShader('ccpoi_shader', {
-    	  schema: {
-		        uColor: {type: 'vec4', is: 'uniform'},
-		        src: {type: 'map',   is: 'uniform'},
-		        material_ambient: {type: 'vec4', is: 'uniform'},
-		        material_diffuse: {type: 'vec4', is: 'uniform'},
-		        material_specular: {type: 'vec4', is: 'uniform'},
-		        material_shininess: {type: 'number', is: 'uniform'}
-    	  },
+        schema: {
+		    uColor: {type: 'vec4', is: 'uniform'},
+		    src: {type: 'map',   is: 'uniform'},
+		    material_ambient: {type: 'vec4', is: 'uniform'},
+		    material_diffuse: {type: 'vec4', is: 'uniform'},
+		    material_specular: {type: 'vec4', is: 'uniform'},
+		    material_shininess: {type: 'number', is: 'uniform'}
+        },
+        
+        uniforms: {
+		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    map: {type: 't',   value: null},
+		    material_ambient: {type: 'vec4'},
+		    material_diffuse: {type: 'vec4'},
+		    material_specular: {type: 'vec4'},
+		    material_shininess: {type: 'number'}
+        },
+        
         vertexShader: [
 //            '#version 300 es',
 //            'uniform mat4 modelViewMatrix;',
@@ -114,7 +124,7 @@ function renderPlaces() {
             '',
             '   vec4 tColor;',
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0)',
-            '      tColor = vec4(1.0, 1.0, 1.0, 1.0);',
+            '      tColor = uColor;',
             '   else',
             '      tColor = texture2D(map, vTexCoord);',
             '   color += (material_ambient * tColor);',
