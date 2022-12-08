@@ -152,7 +152,7 @@ function renderPlaces() {
     model.setAttribute('material', `shader: ccpoi_shader;`);
 //     model.setAttribute('material', `map: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
-    model.setAttribute('scale', '2 2 2');
+    model.setAttribute('scale', '10 10 10');
     model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
 
