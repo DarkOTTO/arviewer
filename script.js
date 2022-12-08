@@ -61,7 +61,7 @@ function renderPlaces() {
         },
         
         uniforms: {
-		    uColor: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+		    uColor: {type: 'vec4', value: {r: 1, g: 0, b: 0, a: 1}},
 		    map: {type: 't', value: cTexture},
 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
@@ -126,10 +126,11 @@ function renderPlaces() {
             '   float rdotv = max(0.0, dot(reflect_vector, view_vector));',
             '',
             '   vec4 tColor;',
-            '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0)',
+            '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0) {',
             '      tColor = uColor;',
-            '   else',
-            '      tColor = texture2D(map, vec2(0.5, 0.5));',
+            '   } else{',
+            '      tColor = vec4(0, 1, 0, 1);',
+		    '   }',
             '   color += (material_ambient * tColor);',
             '   color += (ndotl * material_diffuse * tColor);',
             '',
