@@ -14,7 +14,8 @@ window.onload = () => {
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
-// 	          alert('getLocation() : ' + position.coords.latitude + ' ' + position.coords.longitude);
+// 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
+		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
 	          return position.coords;
 	      }, function(error) {
 	          console.error(error);
@@ -38,7 +39,7 @@ function renderPlaces() {
     let longitude = jsonData.poi[index].poiCoord.lon;
     let model = document.createElement('a-entity');
     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-    console.log("lat : " + latitude + ", lon : " + longitude);
+    console.log("gps entity : lat : " + latitude + ", lon : " + longitude);
 
 //         let src = './assets/obj/burger.obj';
 //         let mtl = './assets/obj/burger.mtl';
@@ -139,8 +140,8 @@ function renderPlaces() {
             '}',
             '',
             'void main() {',
-            '   pc_fragColor = directional_light();',
-//             '   pc_fragColor = vec4(1, 1, 0, 1);',
+//             '   pc_fragColor = directional_light();',
+            '   pc_fragColor = vec4(1, 1, 0, 1);',
             '}'
         ].join('\n')
     });
@@ -151,7 +152,7 @@ function renderPlaces() {
     model.setAttribute('material', `shader: ccpoi_shader;`);
 //     model.setAttribute('material', `map: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
-    model.setAttribute('scale', '1.2 1.2 1.2');
+    model.setAttribute('scale', '2 2 2');
     model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
 
