@@ -131,7 +131,7 @@ function renderPlaces() {
             '   } else{',
             '      tColor = vec4(0, 1, 0, 1);',
 		    '   }',
-//             '   color += (tColor);',
+            '   color += (tColor);',
 //             '   color += (ndotl * tColor);',
 //             '',
 //             '   if (rdotv > 0.0) {',
