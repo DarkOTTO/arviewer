@@ -127,9 +127,9 @@ function renderPlaces() {
             '',
             '   vec4 tColor;',
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0) {',
-            '      tColor = vec4(0, 0, 1, 1);',
-            '   } else{', //texture2D(map, vTexCoord)
             '      tColor = uColor;',
+            '   } else{',
+            '      tColor = texture2D(map, vTexCoord);',
 		    '   }',
             '   color += (tColor);',
 //             '   color += (ndotl * tColor);',
@@ -151,8 +151,8 @@ function renderPlaces() {
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
-    model.setAttribute('material', `uColor:{0, 1, 0, 1};`);
-//     model.setAttribute('material', `map: ${texture};`);
+    model.setAttribute('material', `uColor: {0, 1, 0, 1};`);
+    model.setAttribute('material', `map: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '10 10 10');
     model.setAttribute('rotation', '0 0 0');
