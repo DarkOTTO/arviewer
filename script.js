@@ -129,7 +129,7 @@ function renderPlaces() {
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0)',
             '      tColor = uColor;',
             '   else',
-            '      tColor = texture2D(map, vec2(0.5, 0.5);',
+            '      tColor = texture2D(map, vec2(0.5, 0.5));',
             '   color += (material_ambient * tColor);',
             '   color += (ndotl * material_diffuse * tColor);',
             '',
