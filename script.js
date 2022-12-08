@@ -127,9 +127,9 @@ function renderPlaces() {
             '',
             '   vec4 tColor;',
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0) {',
-            '      tColor = uColor;',
+            '      tColor = vec4(0, 0, 1, 1)uColor;',
             '   } else{', //texture2D(map, vTexCoord)
-            '      tColor = texture2D(map, vec2(0.5, 0.5));',
+            '      tColor = uColor;',
 		    '   }',
             '   color += (tColor);',
 //             '   color += (ndotl * tColor);',
