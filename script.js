@@ -66,7 +66,7 @@ function renderPlaces() {
 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    material_shininess: {type: 'number', value: 40}
+		    material_shininess: {type: 'number', value: 25}
         },
 
         vertexShader: [
@@ -131,12 +131,12 @@ function renderPlaces() {
             '   } else{',
             '      tColor = vec4(0, 1, 0, 1);',
 		    '   }',
-            '   color += (tColor);',
-            '   color += (ndotl * tColor);',
-            '',
-            '   if (rdotv > 0.0) {',
-            '      color += (pow(rdotv, material_shininess) * light_specular);',
-            '   }',
+//             '   color += (tColor);',
+//             '   color += (ndotl * tColor);',
+//             '',
+//             '   if (rdotv > 0.0) {',
+//             '      color += (pow(rdotv, 25) * light_specular);',
+//             '   }',
             '   return color;',
             '}',
             '',
