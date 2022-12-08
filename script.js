@@ -54,19 +54,19 @@ function renderPlaces() {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
 		    src: {type: 'map',   is: 'uniform'},
-		    material_ambient: {type: 'vec4', is: 'uniform'},
-		    material_diffuse: {type: 'vec4', is: 'uniform'},
-		    material_specular: {type: 'vec4', is: 'uniform'},
-		    material_shininess: {type: 'number', is: 'uniform'}
+// 		    material_ambient: {type: 'vec4', is: 'uniform'},
+// 		    material_diffuse: {type: 'vec4', is: 'uniform'},
+// 		    material_specular: {type: 'vec4', is: 'uniform'},
+// 		    material_shininess: {type: 'number', is: 'uniform'}
         },
         
         uniforms: {
 		    uColor: {type: 'vec4', value: {r: 1, g: 0, b: 0, a: 1}},
 		    map: {type: 't', value: cTexture},
-		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-		    material_shininess: {type: 'number', value: 25}
+// 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+// 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+// 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
+// 		    material_shininess: {type: 'number', value: 25}
         },
 
         vertexShader: [
@@ -102,10 +102,10 @@ function renderPlaces() {
             'vec3 light_position = vec3(100.0, 100.0, 100.0);',
             'vec4 light_specular = vec4(1.0, 1.0, 1.0, 1.0);',
             '',
-            'uniform vec4 material_ambient;',
-            'uniform vec4 material_diffuse;',
-            'uniform vec4 material_specular;',
-            'uniform float material_shininess;',
+//             'uniform vec4 material_ambient;',
+//             'uniform vec4 material_diffuse;',
+//             'uniform vec4 material_specular;',
+//             'uniform float material_shininess;',
             '',
             'in vec2 vTexCoord;',
             'in vec3 vVertex;',
@@ -128,7 +128,7 @@ function renderPlaces() {
             '   vec4 tColor;',
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0) {',
             '      tColor = uColor;',
-            '   } else{',
+            '   } else{', //texture2D(map, vTexCoord)
             '      tColor = texture2D(map, vec2(0.5, 0.5));',
 		    '   }',
             '   color += (tColor);',
