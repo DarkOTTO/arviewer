@@ -150,7 +150,8 @@ function renderPlaces() {
 
 //    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
-    model.setAttribute('material', `shader: ccpoi_shader; uColor:{0, 1, 0, 1}`);
+    model.setAttribute('material', `shader: ccpoi_shader;`);
+    model.setAttribute('material', `uColor:{0, 1, 0, 1};`);
 //     model.setAttribute('material', `map: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '10 10 10');
