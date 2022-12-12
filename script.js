@@ -41,9 +41,6 @@ function renderPlaces() {
     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
     console.log("gps entity : lat : " + latitude + ", lon : " + longitude);
 
-//         let src = './assets/obj/burger.obj';
-//         let mtl = './assets/obj/burger.mtl';
-//        let texture = './assets/obj/starbucks_cup.jpg';
     let basePath = './assets/ccpoi/';
     let src = basePath + jsonData.poi[index].objFile;
     let mtl = basePath + jsonData.poi[index].mtlFile;
@@ -54,30 +51,9 @@ function renderPlaces() {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
 		    uMap: {type: 'map',   is: 'uniform'},
-// 		    material_ambient: {type: 'vec4', is: 'uniform'},
-// 		    material_diffuse: {type: 'vec4', is: 'uniform'},
-// 		    material_specular: {type: 'vec4', is: 'uniform'},
-// 		    material_shininess: {type: 'number', is: 'uniform'}
         },
         
-//         uniforms: {
-// 		    uColor: {type: 'vec4', value: {r: 1, g: 0, b: 0, a: 1}},
-// 		    map: {type: 't', value: cTexture},
-// 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-// 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-// 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
-// 		    material_shininess: {type: 'number', value: 25}
-//         },
-
         vertexShader: [
-//            '#version 300 es',
-//            'uniform mat4 modelViewMatrix;',
-//            'uniform mat4 projectionMatrix;',
-//             '',
-//             'layout(location = 0) in vec3 position;',
-//             'layout(location = 1) in vec2 uv;',
-//             'layout(location = 2) in vec3 normal;',
-//             '',
             'out vec2 vTexCoord;',
             'out vec3 vNormal;',
             'out vec3 vVertex;',
@@ -97,22 +73,13 @@ function renderPlaces() {
         ].join('\n'),
 
         fragmentShader: [
-//            'version 300 es',
-//            'precision mediump float;',
             'vec3 light_position = vec3(100.0, 100.0, 100.0);',
             'vec4 light_specular = vec4(1.0, 1.0, 1.0, 1.0);',
-            '',
-//             'uniform vec4 material_ambient;',
-//             'uniform vec4 material_diffuse;',
-//             'uniform vec4 material_specular;',
-//             'uniform float material_shininess;',
             '',
             'in vec2 vTexCoord;',
             'in vec3 vVertex;',
             'in vec3 vNormal;',
             '',
-//            'out vec4 fragmentColor;',
-//             '',
             'uniform sampler2D uMap;',
             'uniform vec4 uColor;',
             '',
@@ -142,13 +109,11 @@ function renderPlaces() {
             '',
             'void main() {',
             '   pc_fragColor = directional_light();',
-//             '   pc_fragColor = vec4(1, 1, 0, 1);',
             '}'
         ].join('\n')
     });
 
 
-//    model.setAttribute('obj-model', `obj: ${src}; mtl: ${mtl};`);
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
     model.setAttribute('material', `uColor: {0, 0, 0, 1};`);
