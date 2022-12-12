@@ -67,7 +67,7 @@ function renderPlaces() {
 // 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 // 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 // 		    material_shininess: {type: 'number', value: 25}
-        },
+//         },
 
         vertexShader: [
 //            '#version 300 es',
