@@ -135,7 +135,7 @@ function renderPlaces() {
             '   color += (ndotl * tColor);',
             '',
             '   if (rdotv > 0.0) {',
-            '      color += (pow(rdotv, 25) * light_specular);',
+            '      color += (pow(rdotv, 25.0) * light_specular);',
             '   }',
             '   return color;',
             '}',
