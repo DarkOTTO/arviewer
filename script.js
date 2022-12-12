@@ -53,16 +53,16 @@ function renderPlaces() {
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
-		    src: {type: 'map',   is: 'uniform'},
+		    uMap: {type: 'map',   is: 'uniform'},
 // 		    material_ambient: {type: 'vec4', is: 'uniform'},
 // 		    material_diffuse: {type: 'vec4', is: 'uniform'},
 // 		    material_specular: {type: 'vec4', is: 'uniform'},
 // 		    material_shininess: {type: 'number', is: 'uniform'}
         },
         
-        uniforms: {
-		    uColor: {type: 'vec4', value: {r: 1, g: 0, b: 0, a: 1}},
-		    map: {type: 't', value: cTexture},
+//         uniforms: {
+// 		    uColor: {type: 'vec4', value: {r: 1, g: 0, b: 0, a: 1}},
+// 		    map: {type: 't', value: cTexture},
 // 		    material_ambient: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 // 		    material_diffuse: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
 // 		    material_specular: {type: 'vec4', value: {r: 1, g: 1, b: 1, a: 1}},
@@ -113,7 +113,7 @@ function renderPlaces() {
             '',
 //            'out vec4 fragmentColor;',
             '',
-            'uniform sampler2D map;',
+            'uniform sampler2D uMap;',
             'uniform vec4 uColor;',
             '',
             'vec4 directional_light() {',
@@ -129,7 +129,7 @@ function renderPlaces() {
             '   if (vTexCoord.s > 1.0 || vTexCoord.s < 0.0 || vTexCoord.t > 1.0 || vTexCoord.t < 0.0) {',
             '      tColor = uColor;',
             '   } else{',
-            '      tColor = texture2D(map, vTexCoord);',
+            '      tColor = texture2D(uMap, vTexCoord);',
 		    '   }',
             '   color += (tColor);',
 //             '   color += (ndotl * tColor);',
@@ -152,7 +152,7 @@ function renderPlaces() {
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
     model.setAttribute('material', `uColor: {0, 1, 0, 1};`);
-    model.setAttribute('material', `map: ${texture};`);
+    model.setAttribute('material', `uMap: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
     model.setAttribute('scale', '10 10 10');
     model.setAttribute('rotation', '0 0 0');
