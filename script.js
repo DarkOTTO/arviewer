@@ -154,7 +154,7 @@ function renderPlaces() {
     model.setAttribute('material', `uColor: {0, 1, 0, 1};`);
     model.setAttribute('material', `uMap: ${texture};`);
     console.log("obj : " + src + ", texture : " + texture);
-    model.setAttribute('scale', '10 10 10');
+    model.setAttribute('scale', '1.2 1.2 1.2');
     model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 5000');
 
