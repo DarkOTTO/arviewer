@@ -40,7 +40,8 @@ a{text-decoration:none;font-size:14px}
 
 .menu {
   width: 800px;
-/*   overflow: hidden; */
+  height: 20%;
+  overflow: hidden;
   margin: 150px auto;
 }
 
