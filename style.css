@@ -69,6 +69,7 @@ a{text-decoration:none;font-size:14px}
     position: relative;
     top: 0;
     left: 0;
+    bottom: 300px;
 }
 
 .menu a {
