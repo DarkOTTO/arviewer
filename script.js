@@ -12,7 +12,7 @@ window.onload = () => {
 };
 
 window.addEventListener("load", () => {
-	var dropBtn = document.getElementById('SelectOBJ')[0];
+    var dropBtn = document.getElementById('SelectOBJ')[0];
     var dropDetailsBanner = document.getElementById('banner')[0];
     var dropDetailsBallon = document.getElementById('ballon')[0];
     var dropDetailsCubeS = document.getElementById('cubeS')[0];
