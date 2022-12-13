@@ -62,14 +62,13 @@ a{text-decoration:none;font-size:14px}
 
 .menu > li {
     width: 20%; /*20*5=100%*/
-    float: left;
+/*     float: left; */
     text-align: center;
     line-height: 40px;
     background-color: #5778ff;
     position: relative;
     top: 0;
     left: 0;
-    bottom: 300px;
 }
 
 .menu a {
