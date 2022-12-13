@@ -19,19 +19,19 @@ window.addEventListener("load", () => {
     var dropDetailsCubeM = document.getElementById('cubeM')[0];
     var dropDetailsCubeL = document.getElementById('cubeL')[0];
     
-    dropDetailsBanner.onClick = () => {
+    dropDetailsBanner.onclick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
     }
-    dropDetailsBallon.onClick = () => {
+    dropDetailsBallon.onclick = () => {
         dropBtn.textContent = dropDetailsBallon.textContent;
     }
-    dropDetailsCubeS.onClick = () => {
+    dropDetailsCubeS.onclick = () => {
         dropBtn.textContent = dropDetailsCubeS.textContent;
     }
-    dropDetailsCubeM.onClick = () => {
+    dropDetailsCubeM.onclick = () => {
         dropBtn.textContent = dropDetailsCubeM.textContent;
     }
-    dropDetailsCubeL.onClick = () => {
+    dropDetailsCubeL.onclick = () => {
         dropBtn.textContent = dropDetailsCubeL.textContent;
     }
 });    
