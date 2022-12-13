@@ -52,11 +52,12 @@ a{text-decoration:none;font-size:14px}
 }
 
 .menu {
-  width: 800px;
-  overflow: hidden;
-  margin: 150px auto;
-  height: 20%;
-  justify-content: center;
+    width: 800px;
+    overflow: hidden;
+    margin: 150px auto;
+    height: 20%;
+    justify-content: center;
+    display: flex;
 }
 
 .menu > li {
