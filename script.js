@@ -11,6 +11,30 @@ window.onload = () => {
     getLocation();
 };
 
+window.addEventListener("load", () => {
+	var dropBtn = document.getElementsById('SelectOBJ')[0];
+    var dropDetailsBanner = document.getElementsById('banner')[0];
+    var dropDetailsBallon = document.getElementsById('ballon')[0];
+    var dropDetailsCubeS = document.getElementsById('cubeS')[0];
+    var dropDetailsCubeM = document.getElementsById('cubeM')[0];
+    var dropDetailsCubeL = document.getElementsById('cubeL')[0];
+    
+    dropDetailsBanner.onClick = () => {
+        dropBtn.textContent = dropDetailsBanner.textContent;
+    }
+    dropDetailsBallon.onClick = () => {
+        dropBtn.textContent = dropDetailsBallon.textContent;
+    }
+    dropDetailsCubeS.onClick = () => {
+        dropBtn.textContent = dropDetailsCubeS.textContent;
+    }
+    dropDetailsCubeM.onClick = () => {
+        dropBtn.textContent = dropDetailsCubeM.textContent;
+    }
+    dropDetailsCubeL.onClick = () => {
+        dropBtn.textContent = dropDetailsCubeL.textContent;
+    }
+});    
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
