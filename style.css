@@ -66,7 +66,7 @@ a{text-decoration:none;font-size:14px}
     text-align: center;
     line-height: 40px;
     background-color: #5778ff;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
 }
