@@ -38,7 +38,7 @@ button {
 li{list-style:none}
 a{text-decoration:none;font-size:14px}
 
-.left {
+/* .left {
     height: 20%;
     justify-content: left;
     position: fixed;
@@ -50,7 +50,7 @@ a{text-decoration:none;font-size:14px}
     left: 0;
     right: 0;
 }
-
+ */
 .menu {
     width: 33%;
     overflow: hidden;
@@ -58,6 +58,8 @@ a{text-decoration:none;font-size:14px}
     justify-content: center;
     display: flex;
     position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .menu > li {
@@ -66,9 +68,6 @@ a{text-decoration:none;font-size:14px}
     text-align: center;
     line-height: 40px;
     background-color: #5778ff;
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
 .menu a {
