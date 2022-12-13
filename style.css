@@ -38,9 +38,21 @@ button {
 li{list-style:none}
 a{text-decoration:none;font-size:14px}
 
+.left {
+    height: 20%;
+    justify-content: left;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    flex-direction: row;
+    width: 330%;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+}
+
 .menu {
   width: 800px;
-  height: 20%;
   overflow: hidden;
   margin: 150px auto;
 }
