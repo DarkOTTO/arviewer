@@ -12,12 +12,12 @@ window.onload = () => {
 };
 
 window.addEventListener("load", () => {
-	var dropBtn = document.getElementsById('SelectOBJ')[0];
-    var dropDetailsBanner = document.getElementsById('banner')[0];
-    var dropDetailsBallon = document.getElementsById('ballon')[0];
-    var dropDetailsCubeS = document.getElementsById('cubeS')[0];
-    var dropDetailsCubeM = document.getElementsById('cubeM')[0];
-    var dropDetailsCubeL = document.getElementsById('cubeL')[0];
+	var dropBtn = document.getElementById('SelectOBJ')[0];
+    var dropDetailsBanner = document.getElementById('banner')[0];
+    var dropDetailsBallon = document.getElementById('ballon')[0];
+    var dropDetailsCubeS = document.getElementById('cubeS')[0];
+    var dropDetailsCubeM = document.getElementById('cubeM')[0];
+    var dropDetailsCubeL = document.getElementById('cubeL')[0];
     
     dropDetailsBanner.onClick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
