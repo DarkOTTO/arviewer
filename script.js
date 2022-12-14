@@ -11,22 +11,22 @@ window.onload = () => {
     getLocation();
 };
 
-window.addEventListener("load", ()=>{
-    var body = document.getElementsByTagName('body')[0];
-    const div = document.querySelector('.instructions');
-    body.onclick = function(event) {
-        if(!event.target.matches('.SelectOBJ')) {
-            var dropdowns = document.getElementsByClassName('submenu');
-            div.innerText = "another region clicked";
-            for(var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if(openDropdown.classList.contains('show')) {   
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-});
+// window.addEventListener("load", ()=>{
+//     var body = document.getElementsByTagName('body')[0];
+//     const div = document.querySelector('.instructions');
+//     body.onclick = function(event) {
+//         if(!event.target.matches('.SelectOBJ')) {
+//             var dropdowns = document.getElementsByClassName('submenu');
+//             div.innerText = "another region clicked";
+//             for(var i = 0; i < dropdowns.length; i++) {
+//                 var openDropdown = dropdowns[i];
+//                 if(openDropdown.classList.contains('show')) {   
+//                     openDropdown.classList.remove('show');
+//                 }
+//             }
+//         }
+//     }
+// });
 
 window.addEventListener("load", () => {
     var dropBtn = document.getElementById('SelectOBJ');
