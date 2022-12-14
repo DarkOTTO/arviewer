@@ -54,7 +54,7 @@ a{text-decoration:none;font-size:14px}
 .menu {
     width: 33%;
     overflow: hidden;
-    margin: 150px auto;
+/*     margin: 150px auto; */
     justify-content: flex-start;
     display: flex;
     position: fixed;
@@ -63,7 +63,7 @@ a{text-decoration:none;font-size:14px}
 }
 
 .menu > li {
-/*     width: 20%; */
+    width: 20%;
 /*     float: left; */
     text-align: center;
     line-height: 40px;
