@@ -18,21 +18,27 @@ window.addEventListener("load", () => {
     var dropDetailsCubeS = document.getElementById('cubeS');
     var dropDetailsCubeM = document.getElementById('cubeM');
     var dropDetailsCubeL = document.getElementById('cubeL');
+    const div = document.querySelector('.instructions');
     
     dropDetailsBanner.onclick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
+        div.innerText = "Banner clicked";
     }
     dropDetailsBalloon.onclick = () => {
         dropBtn.textContent = dropDetailsBalloon.textContent;
+        div.innerText = "Balloon clicked";
     }
     dropDetailsCubeS.onclick = () => {
         dropBtn.textContent = dropDetailsCubeS.textContent;
+        div.innerText = "Cube S clicked";
     }
     dropDetailsCubeM.onclick = () => {
         dropBtn.textContent = dropDetailsCubeM.textContent;
+        div.innerText = "Cube M clicked";
     }
     dropDetailsCubeL.onclick = () => {
         dropBtn.textContent = dropDetailsCubeL.textContent;
+        div.innerText = "Cube L clicked";
     }
 });
 
