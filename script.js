@@ -14,7 +14,7 @@ window.onload = () => {
 window.addEventListener("load", () => {
     var dropBtn = document.getElementById('SelectOBJ');
     var dropDetailsBanner = document.getElementById('banner');
-    var dropDetailsBallon = document.getElementById('ballon');
+    var dropDetailsBalloon = document.getElementById('balloon');
     var dropDetailsCubeS = document.getElementById('cubeS');
     var dropDetailsCubeM = document.getElementById('cubeM');
     var dropDetailsCubeL = document.getElementById('cubeL');
@@ -22,8 +22,8 @@ window.addEventListener("load", () => {
     dropDetailsBanner.onclick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
     }
-    dropDetailsBallon.onclick = () => {
-        dropBtn.textContent = dropDetailsBallon.textContent;
+    dropDetailsBalloon.onclick = () => {
+        dropBtn.textContent = dropDetailsBalloon.textContent;
     }
     dropDetailsCubeS.onclick = () => {
         dropBtn.textContent = dropDetailsCubeS.textContent;
@@ -34,7 +34,8 @@ window.addEventListener("load", () => {
     dropDetailsCubeL.onclick = () => {
         dropBtn.textContent = dropDetailsCubeL.textContent;
     }
-});    
+});
+
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
