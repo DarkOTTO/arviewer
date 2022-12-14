@@ -13,6 +13,29 @@ window.onload = () => {
 
 window.addEventListener("load", () => {
     var dropBtn = document.getElementById('SelectOBJ');
+    dropBtn.onclick = function() {
+        var myDropdown = document.getElementsByClassName('submenu')[0];
+        myDropdown.classList.toggle('show');
+    }
+});
+
+window.addEventListener("load", ()=>{
+    var body = document.getElementsByTagName('body')[0];
+    body.onclick = function(event) {
+        if(!event.target.matches('.SelectOBJ')) {
+            var dropdowns = document.getElementsByClassName('submenu');
+            for(var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if(openDropdown.classList.contains('show')) {   
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+});
+
+window.addEventListener("load", () => {
+    var dropBtn = document.getElementById('SelectOBJ');
     var dropDetailsBanner = document.getElementById('banner');
     var dropDetailsBalloon = document.getElementById('balloon');
     var dropDetailsCubeS = document.getElementById('cubeS');
