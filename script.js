@@ -11,16 +11,6 @@ window.onload = () => {
     getLocation();
 };
 
-window.addEventListener("load", () => {
-    var dropBtn = document.getElementById('SelectOBJ');
-    const div = document.querySelector('.instructions');
-    dropBtn.onclick = function() {
-        var myDropdown = document.getElementsByClassName('submenu')[0];
-        myDropdown.classList.toggle('show');
-        div.innerText = "SelectOBJ button clicked";
-    }
-});
-
 window.addEventListener("load", ()=>{
     var body = document.getElementsByTagName('body')[0];
     const div = document.querySelector('.instructions');
@@ -46,6 +36,12 @@ window.addEventListener("load", () => {
     var dropDetailsCubeM = document.getElementById('cubeM');
     var dropDetailsCubeL = document.getElementById('cubeL');
     const div = document.querySelector('.instructions');
+    
+    dropBtn.onclick = function() {
+        var myDropdown = document.getElementsByClassName('submenu')[0];
+        myDropdown.classList.toggle('show');
+        div.innerText = "SelectOBJ button clicked";
+    }
     
     dropDetailsBanner.onclick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
