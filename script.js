@@ -13,17 +13,21 @@ window.onload = () => {
 
 window.addEventListener("load", () => {
     var dropBtn = document.getElementById('SelectOBJ');
+    const div = document.querySelector('.instructions');
     dropBtn.onclick = function() {
         var myDropdown = document.getElementsByClassName('submenu')[0];
         myDropdown.classList.toggle('show');
+        div.innerText = "SelectOBJ button clicked";
     }
 });
 
 window.addEventListener("load", ()=>{
     var body = document.getElementsByTagName('body')[0];
+    const div = document.querySelector('.instructions');
     body.onclick = function(event) {
         if(!event.target.matches('.SelectOBJ')) {
             var dropdowns = document.getElementsByClassName('submenu');
+            div.innerText = "another region clicked";
             for(var i = 0; i < dropdowns.length; i++) {
                 var openDropdown = dropdowns[i];
                 if(openDropdown.classList.contains('show')) {   
