@@ -84,7 +84,7 @@ a{text-decoration:none;font-size:14px}
   overflow: hidden;
 }
 
-.menu > li:hover {
+/* .menu > li:hover {
   background-color: #94a9ff;
   transition-duration: 0.5s;
 }
@@ -93,3 +93,4 @@ a{text-decoration:none;font-size:14px}
   height: 250px; /*서브메뉴 li한개의 높이 50*5*/
   transition-duration: 1s;
 }
+ */
