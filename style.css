@@ -53,6 +53,7 @@ a{text-decoration:none;font-size:14px}
  */
 .menu {
     width: 33%;
+    height: 100%;
     overflow: hidden;
     margin: 150px auto;
     justify-content: flex-start;
@@ -63,7 +64,7 @@ a{text-decoration:none;font-size:14px}
 }
 
 .menu > li {
-    width: 20%; /*20*5=100%*/
+/*     width: 20%; */
 /*     float: left; */
     text-align: center;
     line-height: 40px;
