@@ -47,6 +47,7 @@ a{text-decoration:none;font-size:14px}
     border: none;
     cursor: pointer;
     justify-content: left;
+    display: flex;
     position: fixed;
     left: 0;
     right: 0;
