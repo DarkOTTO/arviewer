@@ -24,7 +24,17 @@
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
-<!-- <div class="left"> -->
+<div class="dropdown">
+    <button onclick="dropdownFunction()" class="dropbtn" id='SelectOBJ'>Select OBJ</button>
+    <div id="objs" class="dropdown-contents">
+        <a href="#" class='dropdetails' id='banner'>Banner</a>
+        <a href="#" class='dropdetails' id='balloon'>Balloon</a>
+        <a href="#" class='dropdetails' id='cubeS'>Cube-S</a>
+        <a href="#" class='dropdetails' id='cubeM'>Cube-M</a>
+        <a href="#" class='dropdetails' id='cubeL'>Cube-L</a>        
+    </div>
+</div>
+<!-- <div class="left"> 
     <ul class="menu">
         <li>
             <a href="#" id='SelectOBJ'>Select OBJ</a>
