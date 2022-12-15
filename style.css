@@ -42,10 +42,18 @@ a{text-decoration:none;font-size:14px}
 .dropbtn {
     background-color: #3498DB;
     color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+/*     padding: 16px; */
+/*     font-size: 16px; */
+/*     border: none; */
     cursor: pointer;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    border: 2px solid white;
+/*     width: 2em; */
+/*     height: 2em; */
+    font-size: 2em;
+    outline: none;
 }
 
 /* Dropdown button on hover & focus */
