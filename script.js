@@ -29,7 +29,7 @@ window.onload = () => {
 // });
 
 function dropdownFunction() {
-	document.getElementById("objs").classList.toggle("show");
+    document.getElementById("objs").classList.toggle("show");
 }
 
 window.onclick = function(event) {
@@ -55,8 +55,9 @@ window.addEventListener("load", () => {
     const div = document.querySelector('.instructions');
     
     dropBtn.onclick = function() {
-        var myDropdown = document.getElementsByClassName('submenu')[0];
-        myDropdown.classList.toggle('show');
+//         var myDropdown = document.getElementsByClassName('submenu')[0];
+//         myDropdown.classList.toggle('show');
+        document.getElementById("objs").classList.toggle("show");
         div.innerText = "SelectOBJ button clicked";
     }
     
