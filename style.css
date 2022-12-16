@@ -31,8 +31,8 @@ button {
     top: 5%;
     font-size: 1.25em;
     color: red;
-    z-index: 1;
-    width: 100%;
+/*     z-index: 1; */
+    width: 50%;
     height: 1.25em;
 }
 
