@@ -8,6 +8,7 @@ window.onload = () => {
 
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+        getLocation();
         renderPlaces();
     });
 };
