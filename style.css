@@ -96,6 +96,28 @@ a{text-decoration:none;font-size:14px}
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
+.dropdetails {
+    /* 초기값은 안보이게 설정 */
+    visibility: hidden;
+    opacity: 0;
+
+    position: relative;
+    display: inline-block;
+    z-index: 1; /*z-index는 position 속성없이 동작하지 않는다.*/
+    background-color: #94a9ff;
+    /* 상자모양은 '사이즈'박스와 똑같이 설정함 */
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align:  center;
+    color: #fff;
+}
+/* show the dropdown menu using JS  */
+.show > .dropdetails {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* .left {
     height: 20%; 
     justify-content: left;
