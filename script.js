@@ -6,31 +6,17 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = index + '0';
 
-    renderPlaces();
-
-    getLocation();
+    initShader();
+    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+        renderPlaces();
+    });
 };
 
-// window.addEventListener("load", ()=>{
-//     var body = document.getElementsByTagName('body')[0];
-//     const div = document.querySelector('.instructions');
-//     body.onclick = function(event) {
-//         if(!event.target.matches('.SelectOBJ')) {
-//             var dropdowns = document.getElementsByClassName('submenu');
-//             div.innerText = "another region clicked";
-//             for(var i = 0; i < dropdowns.length; i++) {
-//                 var openDropdown = dropdowns[i];
-//                 if(openDropdown.classList.contains('show')) {   
-//                     openDropdown.classList.remove('show');
-//                 }
-//             }
-//         }
-//     }
-// });
+let objModel = "ballon.obj";
 
 function dropdownFunction() {
     document.getElementById("objs").classList.toggle("show");
-}
+};
 
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -43,7 +29,7 @@ window.onclick = function(event) {
             }
         }
     }
-}
+};
 
 window.addEventListener("load", () => {
     var dropBtn = document.getElementById('SelectOBJ');
@@ -64,61 +50,31 @@ window.addEventListener("load", () => {
     dropDetailsBanner.onclick = () => {
         dropBtn.textContent = dropDetailsBanner.textContent;
         div.innerText = "Banner clicked";
+        objModel = "banner_2side.obj";
     }
     dropDetailsBalloon.onclick = () => {
         dropBtn.textContent = dropDetailsBalloon.textContent;
         div.innerText = "Balloon clicked";
+        objModel = "balloon.obj";
     }
     dropDetailsCubeS.onclick = () => {
         dropBtn.textContent = dropDetailsCubeS.textContent;
         div.innerText = "Cube S clicked";
+        objModel = "cubebox_square.obj";
     }
     dropDetailsCubeM.onclick = () => {
         dropBtn.textContent = dropDetailsCubeM.textContent;
         div.innerText = "Cube M clicked";
+        objModel = "cubebox_rectangle.obj";
     }
     dropDetailsCubeL.onclick = () => {
         dropBtn.textContent = dropDetailsCubeL.textContent;
         div.innerText = "Cube L clicked";
+        objModel = "cubebox_long.obj";
     }
 });
 
-function getLocation() {
-    if (navigator.geolocation) { // GPS를 지원하면
-	      navigator.geolocation.getCurrentPosition(function(position) {
-// 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
-		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
-	          return position.coords;
-	      }, function(error) {
-	          console.error(error);
-	      });
-    } else {
-    	  alert('GPS를 지원하지 않습니다');
-    }
-}
-
-function renderPlaces() {
-    let scene = document.querySelector('a-scene');
-    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-        var entity = document.querySelector('[gps-entity-place]');
-        index++;
-        var newIndex = index % 2;
-        index = newIndex;
-        renderPlaces();
-    });
-
-    let latitude = jsonData.poi[index].poiCoord.lat;
-    let longitude = jsonData.poi[index].poiCoord.lon;
-    let model = document.createElement('a-entity');
-    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-    console.log("gps entity : lat : " + latitude + ", lon : " + longitude);
-
-    let basePath = './assets/ccpoi/';
-    let src = basePath + jsonData.poi[index].objFile;
-    let mtl = basePath + jsonData.poi[index].mtlFile;
-    let texture = basePath + jsonData.poi[index].texture;
-    const cTexture = new THREE.TextureLoader().load(`${texture}`);
-
+function initShader() {
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
 		    uColor: {type: 'vec4', is: 'uniform'},
@@ -184,7 +140,37 @@ function renderPlaces() {
             '}'
         ].join('\n')
     });
+};
 
+let latitude = jsonData.poi[index].poiCoord.lat;
+let longitude = jsonData.poi[index].poiCoord.lon;
+
+function getLocation() {
+    if (navigator.geolocation) { // GPS를 지원하면
+	      navigator.geolocation.getCurrentPosition(function(position) {
+// 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
+		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
+              latitude = position.coords.latitude;
+              longitude = position.coords.longitude;
+	      }, function(error) {
+	          console.error(error);
+	      });
+    } else {
+    	  alert('GPS를 지원하지 않습니다');
+    }
+};
+
+function renderPlaces() {
+    let scene = document.querySelector('a-scene');
+    var entity = document.querySelector('[gps-entity-place]');
+    let model = document.createElement('a-entity');
+    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+    console.log("gps entity : lat : " + latitude + ", lon : " + longitude);
+
+    let basePath = './assets/ccpoi/';
+    let src = basePath + objModel;
+    let mtl = basePath + jsonData.poi[index].mtlFile;
+    let texture = basePath + jsonData.poi[index].texture;
 
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
