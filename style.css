@@ -137,8 +137,8 @@ a{text-decoration:none;font-size:14px}
     position: flex;
     bottom: 0%;
     display: flex;
-    flex-direction: row;
-    width: 100%;
+/*     flex-direction: row; */
+    width: 120%;
     margin: 0px auto;
     right: 0;
 }
@@ -152,7 +152,7 @@ a{text-decoration:none;font-size:14px}
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 50%;
     height: 1em;
     font-size: 1em;
     outline: none;
