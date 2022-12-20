@@ -8,7 +8,7 @@ window.onload = () => {
     button.innerText = index + '0';
 
     let scene = document.querySelector('a-scene');
-    model = document.createElement('a-entity');
+//     model = document.createElement('a-entity');
     scene.appendChild(model);
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
