@@ -22,24 +22,9 @@
         vr-mode-ui='enabled: false'
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-camera gps-camera rotation-reader></a-camera>
+        <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
-<!-- <div class="left"> 
-    <ul class="menu">
-        <li>
-            <a href="#" id='SelectOBJ'>Select OBJ</a>
-            <ul class="submenu">
-                <li><a href="#" class='dropdetails' id='banner'>Banner</a></li>
-                <li><a href="#" class='dropdetails' id='balloon'>Balloon</a></li>
-                <li><a href="#" class='dropdetails' id='cubeS'>Cube-S</a></li>
-                <li><a href="#" class='dropdetails' id='cubeM'>Cube-M</a></li>
-                <li><a href="#" class='dropdetails' id='cubeL'>Cube-L</a></li>
-            </ul>
-        </li>
-    </ul>
-<!-- </div> -->
     <div class="dropdown">
-<!--        <div class="dropbtn" id='SelectOBJ'>Select OBJ</div> -->
         <button onclick="dropdownFunction()" class="dropbtn" id='SelectOBJ'>Select OBJ</button>
         <div id="objs" class="dropdown-contents">
             <a href="#" class='dropdetails' id='banner'>Banner</a>
@@ -49,7 +34,11 @@
             <a href="#" class='dropdetails' id='cubeL'>Cube-L</a>        
         </div>
     </div>
-
+    <form action="fileupload.php" enctype="multipart/form-data" method="post">
+        <label class="custom-uploader" for="file">Upload Your File</label>
+        <input id="file" accept="image/jpeg,image/png,image/x-eps" name="fileToUpload" type="file" /> 
+        <button class="btn btn-success" name="submit" type="submit"> Upload File </button>
+    </form>
     <div class="centered">
         <button data-action="change"></button>
     </div>
