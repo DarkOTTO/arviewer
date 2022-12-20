@@ -125,7 +125,7 @@ a{text-decoration:none;font-size:14px}
     justify-content: center;
     display: flex;
     flex-direction: row;
-    width: 120%
+    width: 50%;
     position: fixed;
     right: 0;
     top: 0;
