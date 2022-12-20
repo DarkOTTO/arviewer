@@ -13,7 +13,6 @@ window.onload = () => {
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         getLocation();
-        renderPlaces();
     });
 };
 
@@ -159,6 +158,8 @@ function getLocation() {
               longitude = position.coords.longitude;
               const div = document.querySelector('.instructions');
               div.innerText = 'current location : ' + latitude + ', ' + longitude;
+              
+              renderPlaces();
 	      }, function(error) {
 	          console.error(error);
 	      });
