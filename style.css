@@ -121,80 +121,15 @@ a{text-decoration:none;font-size:14px}
     opacity: 1;
 }
 
-/* .left {
-    height: 20%; 
-    justify-content: left;
+.custom-uploader {
+    height: 20%;
+    justify-content: right;
     position: fixed;
     bottom: 0%;
     display: flex;
     flex-direction: row;
-    width: 330%;
+    width: 100%;
     margin: 0px auto;
-    left: 0;
     right: 0;
 }
- *//*
-.menu {
-    width: 33%;
-    overflow: hidden;
-    justify-content: flex-start;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 
-.menu > li {
-    width: 116px;
-/*     float: left; 
-    text-align: center;
-    line-height: 40px;
-    background-color: #5778ff;
-}
-
-.menu a {
-  color: #fff;
-}
-
-.submenu > li {
-  line-height: 50px;
-  background-color: #94a9ff;
-}
-
-.submenu {
-  height: 0; /*ul의 높이를 안보이게 처리
-  overflow: hidden;
-}
-
-.menu > li:hover {
-  background-color: #94a9ff;
-  transition-duration: 0.5s;
-}
-
-.menu > li:hover .submenu {
-  height: 250px; /*서브메뉴 li한개의 높이 50*5
-  transition-duration: 1s;
-}
-
-.dropdetails {
-    /* 초기값은 안보이게 설정 
-    visibility: hidden;
-    opacity: 0;
-
-    position: relative;
-    display: inline-block;
-    z-index: 1; /*z-index는 position 속성없이 동작하지 않는다.
-    background-color: #94a9ff;
-    /* 상자모양은 '사이즈'박스와 똑같이 설정함 
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    text-align:  center;
-    color: #fff;
-}
-/* show the dropdown menu using JS  *
-.show > .dropdetails {
-    visibility: visible;
-    opacity: 1;
-}
-*/
