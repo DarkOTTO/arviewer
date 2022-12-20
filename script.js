@@ -1,11 +1,13 @@
 import jsonData from './poi/poi.json' assert {type: "json"};
 
 var index = 0;
+let model;
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = index + '0';
 
+    model = document.createElement('a-entity');
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         getLocation();
@@ -153,6 +155,8 @@ function getLocation() {
 		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
               latitude = position.coords.latitude;
               longitude = position.coords.longitude;
+              const div = document.querySelector('.instructions');
+              div.innerText = 'current location : ' + latitude + ', ' + longitude;
 	      }, function(error) {
 	          console.error(error);
 	      });
@@ -164,7 +168,7 @@ function getLocation() {
 function renderPlaces() {
     let scene = document.querySelector('a-scene');
     var entity = document.querySelector('[gps-entity-place]');
-    let model = document.createElement('a-entity');
+    scene.removeChild(model);
     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
     console.log("gps entity : lat : " + latitude + ", lon : " + longitude);
 
