@@ -1,7 +1,7 @@
 import jsonData from './poi/poi.json' assert {type: "json"};
 
-var index = 0;
-let model;
+var index = 1;
+let model = document.createElement('a-entity');
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
