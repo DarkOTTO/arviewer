@@ -142,3 +142,17 @@ a{text-decoration:none;font-size:14px}
     right: 0;
 }
 
+.btn {
+    background-color: rgba(0.7, 0.7, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 0%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 1em;
+    font-size: 1em;
+    outline: none;
+}
