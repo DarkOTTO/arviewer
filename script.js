@@ -7,7 +7,9 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = index + '0';
 
+    let scene = document.querySelector('a-scene');
     model = document.createElement('a-entity');
+    scene.appendChild(model);
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         getLocation();
