@@ -13,6 +13,7 @@ window.onload = () => {
     initShader();
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         getLocation();
+        renderPlaces();
     });
 };
 
@@ -81,8 +82,8 @@ window.addEventListener("load", () => {
 function initShader() {
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
-		    uColor: {type: 'vec4', is: 'uniform'},
-		    uMap: {type: 'map',   is: 'uniform'},
+            uColor: {type: 'vec4', is: 'uniform'},
+            uMap: {type: 'map',   is: 'uniform'},
         },
         
         vertexShader: [
