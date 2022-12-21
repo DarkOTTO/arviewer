@@ -79,6 +79,13 @@ window.addEventListener("load", () => {
     }
 });
 
+const fileInput = document.getElementById("file");
+
+fileInput.onchange = () => {
+  const selectedFile = fileInput.files[0];
+  console.log(selectedFile);
+};
+
 function initShader() {
     AFRAME.registerShader('ccpoi_shader', {
         schema: {
