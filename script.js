@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
     }
 });
 
-const fileInput = document.getElementById("file");
+const fileInput = document.getElementById("fileUpload");
 
 fileInput.onchange = () => {
   const selectedFile = fileInput.files[0];
