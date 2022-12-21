@@ -142,12 +142,12 @@ a{text-decoration:none;font-size:14px}
 }
  */
 .input-file {
-    justify-content: center;
+    justify-content: right;
+    display: flex;
+    flex-direction: row;
     position: fixed
     right: 0;
     top: 0;
-    display: flex;
-    flex-direction: row;
 }
 /* 
 .btn {
