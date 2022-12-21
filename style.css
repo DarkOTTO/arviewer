@@ -144,7 +144,7 @@ a{text-decoration:none;font-size:14px}
 .input-file {
     height: 20%;
     justify-content: center;
-    position: flex;
+    position: fixed
     right: 0;
     top: 0;
     display: flex;
