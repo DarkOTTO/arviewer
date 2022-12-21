@@ -142,6 +142,17 @@ a{text-decoration:none;font-size:14px}
     right: 0;
 }
 
+.input-file {
+    height: 20%;
+    justify-content: center;
+    position: flex;
+    bottom: 0%;
+    display: flex;
+    width: 50px;
+    margin: 0px auto;
+    right: 50px;
+}
+
 .btn {
     background-color: rgba(0.7, 0.7, 0, 0.8);
     color: white;
