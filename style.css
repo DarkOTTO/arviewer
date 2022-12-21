@@ -130,18 +130,17 @@ a{text-decoration:none;font-size:14px}
     top: 0;
 }
 
-.custom-uploader {
+/* .custom-uploader {
     height: 20%;
     justify-content: center;
     position: flex;
     bottom: 0%;
     display: flex;
-/*     flex-direction: row; */
     width: 50px;
     margin: 0px auto;
     right: 0;
 }
-
+ */
 .input-file {
     height: 20%;
     justify-content: center;
@@ -152,7 +151,7 @@ a{text-decoration:none;font-size:14px}
     margin: 0px auto;
     right: 50px;
 }
-
+/* 
 .btn {
     background-color: rgba(0.7, 0.7, 0, 0.8);
     color: white;
@@ -167,3 +166,4 @@ a{text-decoration:none;font-size:14px}
     font-size: 1em;
     outline: none;
 }
+ */
