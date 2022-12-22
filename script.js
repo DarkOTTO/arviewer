@@ -89,7 +89,7 @@ fileInput.onchange = () => {
     div.innerText = selectedFile.name;
     const fileReader = new FileReader();
 
-    fileReader.readAsDataURL(selectedFile[0]);
+    fileReader.readAsDataURL(selectedFile);
 
     fileReader.onload = function () {
         texture = fileReader.result;
