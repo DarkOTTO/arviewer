@@ -80,12 +80,20 @@ window.addEventListener("load", () => {
 });
 
 const fileInput = document.getElementById("fileUpload");
+let texture = jsonData.poi[index].texture;
 
 fileInput.onchange = () => {
     const selectedFile = fileInput.files[0];
     console.log(selectedFile);
     const div = document.querySelector('.instructions');
     div.innerText = selectedFile.name;
+    const fileReader = new FileReader();
+
+    fileReader.readAsDataURL(selectedFile[0]);
+
+    fileReader.onload = function () {
+        texture = fileReader.result;
+    };
 };
 
 function initShader() {
@@ -188,7 +196,7 @@ function renderPlaces() {
     let basePath = './assets/ccpoi/';
     let src = basePath + objModel;
     let mtl = basePath + jsonData.poi[index].mtlFile;
-    let texture = basePath + jsonData.poi[index].texture;
+//     let texture = basePath + jsonData.poi[index].texture;
 
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
