@@ -81,18 +81,23 @@ window.addEventListener("load", () => {
 
 const fileInput = document.getElementById("fileUpload");
 let texture = jsonData.poi[index].texture;
+let imgFileName;
 
 fileInput.onchange = () => {
     const selectedFile = fileInput.files[0];
     console.log(selectedFile);
     const div = document.querySelector('.instructions');
     div.innerText = selectedFile.name;
+    imgFileName = selectedFile.name;
     const fileReader = new FileReader();
 
     fileReader.readAsDataURL(selectedFile);
 
     fileReader.onload = function () {
-        texture = fileReader.result;
+        byte[] bytes = fileReader.result;
+        Path path = Paths.get("./assets/upload/" + imgFileName);
+        Files.write(path, bytes);
+        texture = "./assets/upload/" + imgFileName;
     };
 };
 
