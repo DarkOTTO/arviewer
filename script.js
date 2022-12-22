@@ -85,7 +85,7 @@ fileInput.onchange = () => {
     const selectedFile = fileInput.files[0];
     console.log(selectedFile);
     const div = document.querySelector('.instructions');
-    div.innerText = selectedFile;
+    div.innerText = selectedFile.name;
 };
 
 function initShader() {
