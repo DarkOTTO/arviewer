@@ -17,7 +17,7 @@ window.onload = () => {
     });
 };
 
-let objModel = "ballon.obj";
+let objModel = "balloon.obj";
 
 function dropdownFunction() {
     document.getElementById("objs").classList.toggle("show");
