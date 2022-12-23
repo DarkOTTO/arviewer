@@ -96,10 +96,6 @@ fileInput.onchange = () => {
     fileReader.readAsDataURL(selectedFile);
 
     fileReader.onload = function () {
-//         byte[] bytes = fileReader.result;
-//         Path path = Paths.get("./assets/upload/" + imgFileName);
-//         Files.write(path, bytes);
-//         texture = "./assets/upload/" + imgFileName;
         var blob = new Blob([fileReader.result], { type: imgType });
         let objURL = window.URL.createObjectURL(blob);
             
@@ -212,7 +208,7 @@ function renderPlaces() {
     let basePath = './assets/ccpoi/';
     let src = basePath + objModel;
     let mtl = basePath + jsonData.poi[index].mtlFile;
-//     let texture = basePath + jsonData.poi[index].texture;
+    texture = basePath + jsonData.poi[index].texture;
 
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
