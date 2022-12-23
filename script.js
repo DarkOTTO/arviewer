@@ -94,10 +94,10 @@ fileInput.onchange = () => {
     fileReader.readAsDataURL(selectedFile);
 
     fileReader.onload = function () {
-        byte[] bytes = fileReader.result;
-        Path path = Paths.get("./assets/upload/" + imgFileName);
-        Files.write(path, bytes);
-        texture = "./assets/upload/" + imgFileName;
+//         byte[] bytes = fileReader.result;
+//         Path path = Paths.get("./assets/upload/" + imgFileName);
+//         Files.write(path, bytes);
+//         texture = "./assets/upload/" + imgFileName;
     };
 };
 
