@@ -107,7 +107,8 @@ fileInput.onchange = () => {
         if (window.__Xr_objURL_forCreatingFile__) {
             window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
         }
-        texture = objURL;
+        texture = objURL.slice(6);
+        colsole.log("texture file name : " + texture);
     };
 };
 
