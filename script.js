@@ -1,6 +1,6 @@
 import jsonData from './poi/poi.json' assert {type: "json"};
 
-var index = 1;
+var index = 0;
 let model = document.createElement('a-entity');
 
 window.onload = () => {
@@ -187,8 +187,8 @@ function getLocation() {
 	      navigator.geolocation.getCurrentPosition(function(position) {
 // 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
 		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
-              latitude = position.coords.latitude;
-              longitude = position.coords.longitude;
+//               latitude = position.coords.latitude;
+//               longitude = position.coords.longitude;
               const div = document.querySelector('.instructions');
               div.innerText = 'current location : ' + latitude + ', ' + longitude;
               
