@@ -5,7 +5,7 @@ let model = document.createElement('a-entity');
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = index + '0';
+    button.innerText = index + '1';
 
     let scene = document.querySelector('a-scene');
 //     model = document.createElement('a-entity');
@@ -187,8 +187,8 @@ function getLocation() {
 	      navigator.geolocation.getCurrentPosition(function(position) {
 // 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
 		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
-//               latitude = position.coords.latitude;
-//               longitude = position.coords.longitude;
+              latitude = position.coords.latitude;
+              longitude = position.coords.longitude;
               const div = document.querySelector('.instructions');
               div.innerText = 'current location : ' + latitude + ', ' + longitude;
               
