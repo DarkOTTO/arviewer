@@ -98,6 +98,14 @@ fileInput.onchange = () => {
 //         Path path = Paths.get("./assets/upload/" + imgFileName);
 //         Files.write(path, bytes);
 //         texture = "./assets/upload/" + imgFileName;
+        var blob = new Blob([fileReader.result], { type: 'text/plain' });
+        objURL = window.URL.createObjectURL(blob);
+            
+        // 이전에 생성된 메모리 해제
+        if (window.__Xr_objURL_forCreatingFile__) {
+            window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
+        }
+        texture = objURL;
     };
 };
 
