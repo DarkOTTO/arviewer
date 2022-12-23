@@ -82,6 +82,7 @@ window.addEventListener("load", () => {
 const fileInput = document.getElementById("fileUpload");
 let texture = jsonData.poi[index].texture;
 let imgFileName;
+let imgType;
 
 fileInput.onchange = () => {
     const selectedFile = fileInput.files[0];
@@ -89,6 +90,7 @@ fileInput.onchange = () => {
     const div = document.querySelector('.instructions');
     div.innerText = selectedFile.name;
     imgFileName = selectedFile.name;
+    imgType = selectedFile.type;
     const fileReader = new FileReader();
 
     fileReader.readAsDataURL(selectedFile);
@@ -98,8 +100,8 @@ fileInput.onchange = () => {
 //         Path path = Paths.get("./assets/upload/" + imgFileName);
 //         Files.write(path, bytes);
 //         texture = "./assets/upload/" + imgFileName;
-        var blob = new Blob([fileReader.result], { type: 'text/plain' });
-        objURL = window.URL.createObjectURL(blob);
+        var blob = new Blob([fileReader.result], { type: imgType });
+        let objURL = window.URL.createObjectURL(blob);
             
         // 이전에 생성된 메모리 해제
         if (window.__Xr_objURL_forCreatingFile__) {
