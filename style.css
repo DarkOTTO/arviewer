@@ -31,7 +31,6 @@ button {
     top: 5%;
     font-size: 1.25em;
     color: red;
-/*     z-index: 1; */
     width: 50%;
     height: 1.25em;
 }
@@ -130,17 +129,6 @@ a{text-decoration:none;font-size:14px}
     top: 0;
 }
 
-/* .custom-uploader {
-    height: 20%;
-    justify-content: center;
-    position: flex;
-    bottom: 0%;
-    display: flex;
-    width: 50px;
-    margin: 0px auto;
-    right: 0;
-}
- */
 .input-file {
     justify-content: right;
     display: flex;
@@ -149,19 +137,3 @@ a{text-decoration:none;font-size:14px}
     right: 0;
     top: 0;
 }
-/* 
-.btn {
-    background-color: rgba(0.7, 0.7, 0, 0.8);
-    color: white;
-    border: none;
-    border-radius: 0%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 1em;
-    font-size: 1em;
-    outline: none;
-}
- */
