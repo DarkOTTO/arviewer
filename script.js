@@ -2,6 +2,7 @@ import jsonData from './poi/poi.json' assert {type: "json"};
 
 var index = 0;
 let model = document.createElement('a-entity');
+let objModel = "balloon.obj";
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
@@ -16,8 +17,6 @@ window.onload = () => {
         renderPlaces();
     });
 };
-
-let objModel = "balloon.obj";
 
 function dropdownFunction() {
     document.getElementById("objs").classList.toggle("show");
@@ -46,8 +45,6 @@ window.addEventListener("load", () => {
     const div = document.querySelector('.instructions');
     
     dropBtn.onclick = function() {
-//         var myDropdown = document.getElementsByClassName('submenu')[0];
-//         myDropdown.classList.toggle('show');
         document.getElementById("objs").classList.toggle("show");
         div.innerText = "SelectOBJ button clicked";
     }
@@ -80,7 +77,7 @@ window.addEventListener("load", () => {
 });
 
 const fileInput = document.getElementById("fileUpload");
-let texture = jsonData.poi[index].texture;
+let texture = './assets/ccpoi/' + jsonData.poi[index].texture;
 let imgFileName;
 let imgType;
 
@@ -182,7 +179,6 @@ let longitude = jsonData.poi[index].poiCoord.lon;
 function getLocation() {
     if (navigator.geolocation) { // GPS를 지원하면
 	      navigator.geolocation.getCurrentPosition(function(position) {
-// 	          alert('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
 		      console.log('getLocation() current location : ' + position.coords.latitude + ' ' + position.coords.longitude);
               latitude = position.coords.latitude;
               longitude = position.coords.longitude;
@@ -207,8 +203,6 @@ function renderPlaces() {
 
     let basePath = './assets/ccpoi/';
     let src = basePath + objModel;
-    let mtl = basePath + jsonData.poi[index].mtlFile;
-    texture = basePath + jsonData.poi[index].texture;
 
     model.setAttribute('obj-model', `obj: ${src};`);
     model.setAttribute('material', `shader: ccpoi_shader;`);
